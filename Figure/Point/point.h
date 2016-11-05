@@ -12,6 +12,7 @@ private:
 	double y;
 public:
 	Point(double x = 0, double y = 0);	// 생성자
+	Point(const Point& p);
 	void setPoint(const double& x, const double& y);
 	void setPoint(const Point& p);
 	void setX(const double x);
