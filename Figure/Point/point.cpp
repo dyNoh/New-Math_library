@@ -1,21 +1,25 @@
+#include <iostream>
 #include "point.h"
+
+using std::cout;
+using std::endl;
 
 Point::Point(double x, double y)
 {
-    this->x = x;
+	this->x = x;
 	this->y = y;
 }
 
 void Point::setPoint(const double & x, const double & y)
 {
-    this->x = x;
+	this->x = x;
 	this->y = y;
 }
 
 void Point::setPoint(const Point & p)
 {
-    this->x = p.x;
-    this->y = p.y;
+	this->x = p.x;
+	this->y = p.y;
 }
 
 void Point::setX(const double x)
@@ -44,4 +48,18 @@ double Point::getY(void) const
 double Point::distance(Point & p)
 {
 	return 0.0;
+}
+
+void Point::showData(void) const
+{
+}
+
+void Point::showData(void) const
+{
+	cout << "x : " << x << endl;
+	cout << "y : " << y << endl;
+}
+
+Point::~Point()
+{
 }
