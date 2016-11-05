@@ -14,6 +14,8 @@ void Point::setPoint(const double & x, const double & y)
 
 void Point::setPoint(const Point & p)
 {
+    this->x = p.x;
+    this->y = p.y;
 }
 
 void Point::setX(const double x)
