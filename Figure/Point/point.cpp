@@ -10,6 +10,12 @@ Point::Point(double x, double y)
 	this->y = y;
 }
 
+Point::Point(const Point & p)
+{
+	this->x = p.x;
+	this->y = p.y;
+}
+
 void Point::setPoint(const double & x, const double & y)
 {
 	this->x = x;
