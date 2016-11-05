@@ -28,11 +28,11 @@ void Point::setPoint(const Point & p)
 	this->y = p.y;
 }
 
-void Point::setX(const double x)
+void Point::setX(const double& x)
 {
 }
 
-void Point::setY(const double y)
+void Point::setY(const double& y)
 {
 }
 
@@ -51,19 +51,15 @@ double Point::getY(void) const
 	return 0.0;
 }
 
-double Point::distance(Point & p)
+double Point::distance(const Point & p)
 {
 	return 0.0;
 }
 
 void Point::showData(void) const
 {
-}
-
-void Point::showData(void) const
-{
-	cout << "x : " << x << endl;
-	cout << "y : " << y << endl;
+	cout << "x : " << getX() << endl;
+	cout << "y : " << getY() << endl;
 }
 
 Point::~Point()
