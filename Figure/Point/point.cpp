@@ -8,6 +8,8 @@ Point::Point(double x, double y)
 
 void Point::setPoint(const double & x, const double & y)
 {
+    this->x = x;
+	this->y = y;
 }
 
 void Point::setPoint(const Point & p)
