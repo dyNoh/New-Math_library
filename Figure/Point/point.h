@@ -2,7 +2,7 @@
 #define __POINT_H__
 
 /*
-    점에 관련된 헤더 파일
+	점에 관련된 헤더파일
 */
 
 class Point
@@ -20,5 +20,7 @@ public:
 	double getX(void) const;
 	double getY(void) const;
 	double distance(Point& p);			// 다른 점과의 거리
+	void showData(void) const;				// 정보 나타내기
+	~Point();							// 소멸자
 };
 #endif
