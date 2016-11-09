@@ -28,11 +28,11 @@ void Circle::setCircle(const Circle & c)
 {
 }
 
-void Circle::setCenterPoint(const Point & p)
+void Circle::setCenter(const Point & p)
 {
 }
 
-void Circle::setPoint(const double & x, const double & y)
+void Circle::setCenter(const double & x, const double & y)
 {
 }
 
