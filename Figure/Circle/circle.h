@@ -17,7 +17,7 @@ public:
 	void setCircle(const double& x, const double& y, const double& r);
 	void setCircle(const Point& p, const double& r);
 	void setCircle(const Circle& c);
-	void setPoint(const Point& p);
+	void setCenterPoint(const Point& p);
 	void setPoint(const double& x, const double& y);
 	void setR(const double& r);
 	Circle getCircle(void) const;

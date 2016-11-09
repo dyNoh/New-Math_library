@@ -28,7 +28,7 @@ void Circle::setCircle(const Circle & c)
 {
 }
 
-void Circle::setPoint(const Point & p)
+void Circle::setCenterPoint(const Point & p)
 {
 }
 
