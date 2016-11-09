@@ -30,10 +30,12 @@ void Point::setPoint(const Point & p)
 
 void Point::setX(const double& x)
 {
+	this->x = x;
 }
 
 void Point::setY(const double& y)
 {
+	this->y = y;
 }
 
 Point Point::getPoint(void) const
