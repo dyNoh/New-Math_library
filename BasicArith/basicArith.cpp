@@ -39,3 +39,24 @@ double Sqrt(const double& num)
 
 	return XnP1;
 }
+
+double Pow(const double & num, const int & n)
+{
+	double val = 1;
+
+	if (n < 0)
+	{
+		for (int m = 0; m < -n; m++)
+		{
+			val *= (1 / num);
+		}
+		return val;
+	}
+
+	for (int m = 0; m < n; m++)
+	{
+		val *= num;
+	}
+
+	return val;
+}
