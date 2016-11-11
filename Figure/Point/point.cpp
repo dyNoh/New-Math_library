@@ -1,5 +1,6 @@
 #include <iostream>
 #include "point.h"
+#include "..\..\BasicArith\basicArith.h"
 
 using std::cout;
 using std::endl;
@@ -55,13 +56,16 @@ double Point::GetY(void) const
 
 double Point::Distance(const Point & p)
 {
-	return 0.0;
+	double xDis = this->x - p.x;
+	double yDis = this->y - p.y;
+
+	return Sqrt(Pow(xDis) + Pow(yDis));
 }
 
 void Point::ShowData(void) const
 {
-	cout << "x : " << getX() << endl;
-	cout << "y : " << getY() << endl;
+	cout << "x : " << GetX() << endl;
+	cout << "y : " << GetY() << endl;
 }
 
 Point::~Point()
