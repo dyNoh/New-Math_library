@@ -67,9 +67,9 @@ double Circle::GetRound(void) const
 
 void Circle::ShowData(void)
 {
-	cout << "x : " << getPoint().getX() << endl;
-	cout << "y : " << getPoint().getY() << endl;
-	cout << "r : " << getR() << endl;
+	cout << "x : " << GetPoint().GetX() << endl;
+	cout << "y : " << GetPoint().GetY() << endl;
+	cout << "r : " << GetR() << endl;
 }
 
 Circle::~Circle()
