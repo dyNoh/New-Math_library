@@ -61,7 +61,7 @@ double Point::Distance(const double & x, const double & y)
 
 	if (xDis == 0 && yDis == 0)
 	{
-		return 0;
+		return 0.0;
 	}
 
 	return Sqrt(Pow(xDis) + Pow(yDis));
@@ -74,7 +74,7 @@ double Point::Distance(const Point & p)
 
 	if (xDis == 0 && yDis == 0)
 	{
-		return 0;
+		return 0.0;
 	}
 
 	return Sqrt(Pow(xDis) + Pow(yDis));
