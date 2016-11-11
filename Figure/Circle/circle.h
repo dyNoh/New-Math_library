@@ -4,6 +4,10 @@
 #include "..\..\BasicArith\basicArith.h"
 #include "..\Point\point.h"
 
+/*
+	원에 관련된 헤더파일
+*/
+
 class Circle
 {
 private:
