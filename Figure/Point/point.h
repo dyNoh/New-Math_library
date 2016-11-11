@@ -13,15 +13,15 @@ private:
 public:
 	Point(double x = 0, double y = 0);	// 생성자
 	Point(const Point& p);
-	void setPoint(const double& x, const double& y);
-	void setPoint(const Point& p);
-	void setX(const double& x);
-	void setY(const double& y);
-	Point getPoint(void) const;
-	double getX(void) const;
-	double getY(void) const;
-	double distance(const Point& p);	// 다른 점과의 거리
-	void showData(void) const;			// 정보 나타내기
+	void SetPoint(const double& x, const double& y);
+	void SetPoint(const Point& p);
+	void SetX(const double& x);
+	void SetY(const double& y);
+	Point GetPoint(void) const;
+	double GetX(void) const;
+	double GetY(void) const;
+	double Distance(const Point& p);	// 다른 점과의 거리
+	void ShowData(void) const;			// 정보 나타내기
 	~Point();							// 소멸자
 };
 #endif

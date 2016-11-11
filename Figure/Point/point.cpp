@@ -16,49 +16,49 @@ Point::Point(const Point & p)
 	this->y = p.y;
 }
 
-void Point::setPoint(const double & x, const double & y)
+void Point::SetPoint(const double & x, const double & y)
 {
 	this->x = x;
 	this->y = y;
 }
 
-void Point::setPoint(const Point & p)
+void Point::SetPoint(const Point & p)
 {
 	this->x = p.x;
 	this->y = p.y;
 }
 
-void Point::setX(const double& x)
+void Point::SetX(const double& x)
 {
 	this->x = x;
 }
 
-void Point::setY(const double& y)
+void Point::SetY(const double& y)
 {
 	this->y = y;
 }
 
-Point Point::getPoint(void) const
+Point Point::GetPoint(void) const
 {
 	return Point();
 }
 
-double Point::getX(void) const
+double Point::GetX(void) const
 {
 	return 0.0;
 }
 
-double Point::getY(void) const
+double Point::GetY(void) const
 {
 	return 0.0;
 }
 
-double Point::distance(const Point & p)
+double Point::Distance(const Point & p)
 {
 	return 0.0;
 }
 
-void Point::showData(void) const
+void Point::ShowData(void) const
 {
 	cout << "x : " << getX() << endl;
 	cout << "y : " << getY() << endl;

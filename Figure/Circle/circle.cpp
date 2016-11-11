@@ -16,56 +16,56 @@ Circle::Circle(const Circle & c)
 {
 }
 
-void Circle::setCircle(const double & x, const double & y, const double & r)
+void Circle::SetCircle(const double & x, const double & y, const double & r)
 {
 }
 
-void Circle::setCircle(const Point & p, const double & r)
+void Circle::SetCircle(const Point & p, const double & r)
 {
 }
 
-void Circle::setCircle(const Circle & c)
+void Circle::SetCircle(const Circle & c)
 {
 }
 
-void Circle::setCenter(const Point & p)
+void Circle::SetCenter(const Point & p)
 {
 }
 
-void Circle::setCenter(const double & x, const double & y)
+void Circle::SetCenter(const double & x, const double & y)
 {
 }
 
-void Circle::setR(const double & r)
+void Circle::SetR(const double & r)
 {
 }
 
-Circle Circle::getCircle(void) const
+Circle Circle::GetCircle(void) const
 {
 	return Circle();
 }
 
-Point Circle::getPoint(void) const
+Point Circle::GetPoint(void) const
 {
 	return Point();
 }
 
-double Circle::getR(void) const
+double Circle::GetR(void) const
 {
 	return 0.0;
 }
 
-double Circle::getArea(void) const
+double Circle::GetArea(void) const
 {
 	return 0.0;
 }
 
-double Circle::getRound(void) const
+double Circle::GetRound(void) const
 {
 	return 0.0;
 }
 
-void Circle::showData(void)
+void Circle::ShowData(void)
 {
 	cout << "x : " << getPoint().getX() << endl;
 	cout << "y : " << getPoint().getY() << endl;
