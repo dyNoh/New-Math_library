@@ -75,17 +75,17 @@
 
 	double Circle::GetR(void) const
 	{
-		return 0.0;
+		return this->r;
 	}
 
 	double Circle::GetArea(void) const
 	{
-		return 0.0;
+		return ( 2 * PI * Pow(GetR()) );
 	}
 
 	double Circle::GetRound(void) const
 	{
-		return 0.0;
+		return ( PI * Pow(GetR()) * Pow(GetR()) );
 	}
 
 	void Circle::ShowData(void)
