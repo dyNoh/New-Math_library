@@ -1,4 +1,5 @@
 #include "basicArith.h"
+#include <iostream>
 
 double Add(double num1, double num2)
 {
@@ -22,6 +23,13 @@ double Div(double num1, double num2)
 
 double Sqrt(const double& num)
 {
+	// 이 부분에 num이 0 이하일 경우 예외처리
+	/*if (num <= 0)
+	{
+		cout << "NaN" << endl;
+		return 0.0;
+	}*/
+
 	double Xn = 1;		// Xn
 	double XnP1 = 1;	// Xn+1
 
