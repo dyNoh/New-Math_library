@@ -41,23 +41,28 @@ void Point::SetY(const double& y)
 
 Point Point::GetPoint(void) const
 {
-	return Point();
+	return Point(this->x, this->y);
 }
 
 double Point::GetX(void) const
 {
-	return 0.0;
+	return this->x;
 }
 
 double Point::GetY(void) const
 {
-	return 0.0;
+	return this->y;
 }
 
 double Point::Distance(const double & x, const double & y)
 {
 	double xDis = this->x - x;
 	double yDis = this->y - y;
+
+	if (xDis == 0 && yDis == 0)
+	{
+		return 0;
+	}
 
 	return Sqrt(Pow(xDis) + Pow(yDis));
 }
@@ -66,6 +71,11 @@ double Point::Distance(const Point & p)
 {
 	double xDis = this->x - p.x;
 	double yDis = this->y - p.y;
+
+	if (xDis == 0 && yDis == 0)
+	{
+		return 0;
+	}
 
 	return Sqrt(Pow(xDis) + Pow(yDis));
 }
