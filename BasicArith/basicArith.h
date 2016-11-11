@@ -10,6 +10,6 @@ double Add(double num1, double num2);   // num1 + num2
 double Min(double num1, double num2);   // num1 - num2
 double Mul(double num1, double num2);   // num1 * num2
 double Div(double num1, double num2);   // num1 / num2
-double Sqrt(double num);                // Square root, 제곱근
+double Sqrt(const double& num);         // Square root, 제곱근, 바빌로니아법 이용
 
 #endif
