@@ -12,22 +12,28 @@ Triangle::Triangle(const double & t0_x, const double & t0_y, const double & t1_x
 
 Triangle::Triangle(const Point & p1, const Point & p2, const Point & p3)
 {
-	this->t[0] = p1;
-	this->t[1] = p2;
-	this->t[2] = p3;
+	this->t[0]->x = p1.x;
+	this->t[0]->y = p1.y;
+	this->t[1]->x = p2.x;
+	this->t[1]->y = p2.y;
+	this->t[2]->x = p3.x;
+	this->t[2]->y = p3.y
 }
 
 Triangle::Triangle(const Point & p1, const Point & p2, const double & t2_x, const double & t2_y)
 {
-	this->t[0] = p1;
-	this->t[1] = p2;
+	this->t[0]->x = p1.x;
+	this->t[0]->y = p1.y;
+	this->t[1]->x = p2.x;
+	this->t[1]->y = p2.y
 	this->t[2]->x = t2_x;
 	this->t[2]->y = t2_y;
 }
 
 Triangle::Triangle(const Point & p1, const double & t1_x, const double & t1_y, const double & t2_x, const double & t2_y)
 {
-		this->t[0] = p1;
+		this->t[0]->x = p1.x;
+		this->t[0]->y = p1.y;
 		this->t[1]->x = t1_x;
 		this->t[1]->y = t1_y;
 		this->t[2]->x = t2_x;
@@ -46,22 +52,28 @@ void Triangle::SetTriangle(const double & t0_x, const double & t0_y, const doubl
 
 void Triangle::SetTriangle(const Point & p1, const Point & p2, const Point & p3)
 {
-	this->t[0] = p1;
-	this->t[1] = p2;
-	this->t[2] = p3;
+	this->t[0]->x = p1.x;
+	this->t[0]->y = p1.y;
+	this->t[1]->x = p2.x;
+	this->t[1]->y = p2.y;
+	this->t[2]->x = p3.x;
+	this->t[2]->y = p3.y;
 }
 
 void Triangle::SetTriangle(const Point & p1, const Point & p2, const double & t2_x, const double & t2_y)
 {
-	this->t[0] = p1;
-	this->t[1] = p2;
+	this->t[0]->x = p1.x;
+	this->t[0]->y = p1.y;
+	this->t[1]->x = p2.x;
+	this->t[1]->y = p2.y
 	this->t[2]->x = t2_x;
 	this->t[2]->y = t2_y;
 }
 
 void Triangle::SetTriangle(const Point & p1, const double & t1_x, const double & t1_y, const double & t2_x, const double & t2_y)
 {
-	this->t[0] = p1;
+	this->t[0]->x = p1.x;
+	this->t[0]->y = p1.y;
 	this->t[1]->x = t1_x;
 	this->t[1]->y = t1_y;
 	this->t[2]->x = t2_x;
@@ -76,7 +88,8 @@ void Triangle::SetP0(const double & x, const double & y)
 
 void Triangle::SetP0(const Point & p)
 {
-	this->t[0] = p;
+	this->t[0]->x = p.x;
+	this->t[0]->y = p.y;
 }
 
 void Triangle::SetP1(const double & x, const double & y)
@@ -87,7 +100,8 @@ void Triangle::SetP1(const double & x, const double & y)
 
 void Triangle::SetP1(const Point & p)
 {
-	this->t[1] = p;
+	this->t[1]->x = p.x;
+	this->t[1]->y = p.y;
 }
 
 void Triangle::SetP2(const double & x, const double & y)
@@ -98,7 +112,8 @@ void Triangle::SetP2(const double & x, const double & y)
 
 void Triangle::SetP2(const Point & p)
 {
-	this->t[2] = p;
+	this->t[2]->x = p.x;
+	this->t[2]->y = p.y;
 }
 
 Triangle Triangle::GetTriangle(void) const
@@ -123,7 +138,9 @@ Point Triangle::GetP2(void) const
 
 double Triangle::GetArea(void) const
 {
-	return 0.0;
+	return (1/2)*(((this->t[0]->x)*(this->t[1]->y) + (this->t[1]->x)*(this->t[2]->y) +
+	            (this->t[2]->x)*(this->t[0]->y)) - ((this->t[0]->x)*(this->t[2]->y) +
+						  (this->t[2]->x)*(this->t[1]->y) + (this->t[1]->x)*(this->t[0]->y)));
 }
 
 double Triangle::GetRound(void) const
