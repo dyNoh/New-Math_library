@@ -1,4 +1,4 @@
-#include "Triangle.h"
+#include "triangle.h"
 
 Triangle::Triangle(const double & t0_x, const double & t0_y, const double & t1_x, const double & t1_y, const double & t2_x, const double & t2_y)
 {
