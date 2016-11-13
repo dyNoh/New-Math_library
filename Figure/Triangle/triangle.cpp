@@ -2,58 +2,103 @@
 
 Triangle::Triangle(const double & t0_x, const double & t0_y, const double & t1_x, const double & t1_y, const double & t2_x, const double & t2_y)
 {
+	this->t[0]->x = t0_x;
+	this->t[0]->y = t0_y;
+	this->t[1]->x = t1_x;
+	this->t[1]->y = t1_y;
+	this->t[2]->x = t2_x;
+	this->t[2]->y = t2_y;
 }
 
 Triangle::Triangle(const Point & p1, const Point & p2, const Point & p3)
 {
+	this->t[0] = p1;
+	this->t[1] = p2;
+	this->t[2] = p3;
 }
 
 Triangle::Triangle(const Point & p1, const Point & p2, const double & t2_x, const double & t2_y)
 {
+	this->t[0] = p1;
+	this->t[1] = p2;
+	this->t[2]->x = t2_x;
+	this->t[2]->y = t2_y;
 }
 
 Triangle::Triangle(const Point & p1, const double & t1_x, const double & t1_y, const double & t2_x, const double & t2_y)
 {
+		this->t[0] = p1;
+		this->t[1]->x = t1_x;
+		this->t[1]->y = t1_y;
+		this->t[2]->x = t2_x;
+		this->t[2]->y = t2_y;
 }
 
 void Triangle::SetTriangle(const double & t0_x, const double & t0_y, const double & t1_x, const double & t1_y, const double & t2_x, const double & t2_y)
 {
+	this->t[0]->x = t0_x;
+	this->t[0]->y = t0_y;
+	this->t[1]->x = t1_x;
+	this->t[1]->y = t1_y;
+	this->t[2]->x = t2_x;
+	this->t[2]->y = t2_y;
 }
 
 void Triangle::SetTriangle(const Point & p1, const Point & p2, const Point & p3)
 {
+	this->t[0] = p1;
+	this->t[1] = p2;
+	this->t[2] = p3;
 }
 
 void Triangle::SetTriangle(const Point & p1, const Point & p2, const double & t2_x, const double & t2_y)
 {
+	this->t[0] = p1;
+	this->t[1] = p2;
+	this->t[2]->x = t2_x;
+	this->t[2]->y = t2_y;
 }
 
 void Triangle::SetTriangle(const Point & p1, const double & t1_x, const double & t1_y, const double & t2_x, const double & t2_y)
 {
+	this->t[0] = p1;
+	this->t[1]->x = t1_x;
+	this->t[1]->y = t1_y;
+	this->t[2]->x = t2_x;
+	this->t[2]->y = t2_y;
 }
 
 void Triangle::SetP0(const double & x, const double & y)
 {
+	this->t[0]->x = x;
+	this->t[0]->y = y;
 }
 
 void Triangle::SetP0(const Point & p)
 {
+	this->t[0] = p;
 }
 
 void Triangle::SetP1(const double & x, const double & y)
 {
+	this->t[1]->x = x;
+	this->t[1]->y = y;
 }
 
 void Triangle::SetP1(const Point & p)
 {
+	this->t[1] = p;
 }
 
 void Triangle::SetP2(const double & x, const double & y)
 {
+	this->t[2]->x = x;
+	this->t[2]->y = y;
 }
 
 void Triangle::SetP2(const Point & p)
 {
+	this->t[2] = p;
 }
 
 Triangle Triangle::GetTriangle(void) const
