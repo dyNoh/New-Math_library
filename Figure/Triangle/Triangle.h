@@ -3,6 +3,10 @@
 
 #include "../Point/point.h"
 
+/*
+	ì‚¼ê°í˜•ì— ê´€ë ¨ëœ í—¤ë”íŒŒì¼
+*/
+
 class Triangle
 {
 private:
@@ -26,16 +30,16 @@ public:
 	Point GetP0(void) const;
 	Point GetP1(void) const;
 	Point GetP2(void) const;
-	double GetArea(void) const;		// ³ĞÀÌ
-	double GetRound(void) const;	// µÑ·¹
-	double GetCenterOfGravity(void) const;	// ¹«°ÔÁß½É
-	double GetOrthcenter(void) const;	// ¼ö½É
-	double GetExcenter(void) const;	// ¹æ½É
-	double GetIntercenter(void) const;	// ³»½É
-	double GetCircumcenter(void) const;	// ¿Ü½É
-	void ShowData(void) const;	// Á¤º¸ ³ªÅ¸³»±â
-	// »ï°¢Çü °¢µµ ±¸ÇÏ±â µî Ãß°¡
-	~Triangle();	// ¼Ò¸êÀÚ
+	double GetArea(void) const;		// ë„“ì´
+	double GetRound(void) const;	// ë‘˜ë ˆ
+	double GetCenterOfGravity(void) const;	// ë¬´ê²Œì¤‘ì‹¬
+	double GetOrthcenter(void) const;	// ìˆ˜ì‹¬
+	double GetExcenter(void) const;	// ë°©ì‹¬
+	double GetIntercenter(void) const;	// ë‚´ì‹¬
+	double GetCircumcenter(void) const;	// ì™¸ì‹¬
+	void ShowData(void) const;	// ì •ë³´ ë‚˜íƒ€ë‚´ê¸°
+	// ì‚¼ê°í˜• ê°ë„ êµ¬í•˜ê¸° ë“± ì¶”ê°€
+	~Triangle();	// ì†Œë©¸ì
 };
 
 #endif
