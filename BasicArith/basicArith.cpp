@@ -109,12 +109,19 @@ static double Sinus(double arg, int quad)
 	temp2 = ((((ysq + q3)*ysq + q2)*ysq + q1)*ysq + q0);
 	return(temp1 / temp2);
 }
+
 double Cos(double x)
 {
 	if (x < 0.0) x = -x;
 	return (sinus(x, 1));
 }
+
 double Sin(double x)
 {
 	return (sinus(x, 0));
+}
+
+double PowE(const double& n = 2)
+{
+	return 0.0
 }
