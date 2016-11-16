@@ -71,20 +71,50 @@ double Pow(const double & num, const int & n)
 
 static double Sinus(double arg, int quad)
 {
-	return 0.0
+	double e, f;
+	int k;
+	double ysq;
+	double x, y;
+	double temp1, temp2;
+	x = arg;
+	if (x < 0)
+	{
+		x = -x;
+		quad = quad + 2;
+	}
+	x = x * twoopi;
+	if (x > 32764)
+	{
+		y = modf(x, &e);
+		e = e + quad;
+		modf(0.25*e, &f);
+		quad = e - 4 * f;
+	}
+	else
+	{
+		k = x;
+		y = x - k;
+		quad = (quad + k) & 03;
+	}
+	if (quad & 01)
+	{
+		y = 1 - y;
+	}
+	if (quad > 1)
+	{
+		y = -y;
+	}
+	ysq = y*y;
+	temp1 = ((((p4*ysq + p3)*ysq + p2)*ysq + p1)*ysq + p0)*y;
+	temp2 = ((((ysq + q3)*ysq + q2)*ysq + q1)*ysq + q0);
+	return(temp1 / temp2);
 }
-
 double Cos(double x)
 {
-	return 0.0
+	if (x < 0.0) x = -x;
+	return (sinus(x, 1));
 }
-
 double Sin(double x)
 {
-	return 0.0
-}
-
-double PowE(const double& n = 2)
-{
-	return 0.0
+	return (sinus(x, 0));
 }
