@@ -18,7 +18,7 @@ Circle::Circle(const Point & p, const double & r)
 
 Circle::Circle(const Circle & c)
 {
-	this->SetCircle(c)
+	this->SetCircle(c);
 }
 
 void Circle::SetCircle(const double & x, const double & y, const double & r)

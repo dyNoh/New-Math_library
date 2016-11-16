@@ -112,16 +112,24 @@ static double Sinus(double arg, int quad)
 
 double Cos(double x)
 {
-	if (x < 0.0) x = -x;
-	return (sinus(x, 1));
+	if (x * PI / 180 < 0.0)
+		x = -x;
+	return (Sinus(x * PI / 180, 1));
 }
 
 double Sin(double x)
 {
-	return (sinus(x, 0));
+	return (Sinus(x * PI / 180, 0));
 }
 
-double PowE(const double& n = 2)
+double Tan(double x)
 {
-	return 0.0
+	if(x * PI / 180 < 0.0)
+		return (Sinus(x * PI / 180, 0) / (Sinus(-x * PI / 180, 1)));
+	return (Sinus(x * PI / 180, 0) / (Sinus(x * PI / 180, 1)));
+}
+
+double PowE(const double & n)
+{
+	return 0.0;
 }
