@@ -5,7 +5,7 @@ using std::endl;
 
 Triangle::Triangle(const double & t0_x, const double & t0_y, const double & t1_x, const double & t1_y, const double & t2_x, const double & t2_y)
 {
-	this->t[0].SetPoint(t0_x, t0_x);
+	this->t[0].SetPoint(t0_x, t0_y);
 	this->t[1].SetPoint(t1_x, t1_y);
 	this->t[2].SetPoint(t2_x, t2_y);
 }
@@ -33,7 +33,7 @@ Triangle::Triangle(const Point & p1, const double & t1_x, const double & t1_y, c
 
 void Triangle::SetTriangle(const double & t0_x, const double & t0_y, const double & t1_x, const double & t1_y, const double & t2_x, const double & t2_y)
 {
-	this->t[0].SetPoint(t0_x, t0_x);
+	this->t[0].SetPoint(t0_x, t0_y);
 	this->t[1].SetPoint(t1_x, t1_y);
 	this->t[2].SetPoint(t2_x, t2_y);
 }
@@ -99,29 +99,34 @@ Triangle Triangle::GetTriangle(void) const
 
 Point Triangle::GetP0(void) const
 {
-	return Point(this->t[0].GetPoint);
+	return Point(this->t[0].GetPoint());
 }
 
 Point Triangle::GetP1(void) const
 {
-	return Point(this->t[1].GetPoint);
+	return Point(this->t[1].GetPoint());
 }
 
 Point Triangle::GetP2(void) const
 {
-	return Point(this->t[2].GetPoint);
+	return Point(this->t[2].GetPoint());
 }
 
 double Triangle::GetArea(void) const
 {
-	return (1/2)*(((this->t[0].GetX())*(this->t[1].GetY()) + (this->t[1].GetX())*(this->t[2].GetY()) +
-	            (this->t[2].GetX())*(this->t[0].GetY())) - ((this->t[0].GetX())*(this->t[2].GetY()) +
-						  (this->t[2].GetX())*(this->t[1].GetY()) + (this->t[1].GetX())*(this->t[0].GetY())));
+	double value = (0.5)*(((this->t[0].GetX())*(this->t[1].GetY()) + (this->t[1].GetX())*(this->t[2].GetY()) +
+		(this->t[2].GetX())*(this->t[0].GetY())) - ((this->t[0].GetX())*(this->t[2].GetY()) +
+		(this->t[2].GetX())*(this->t[1].GetY()) + (this->t[1].GetX())*(this->t[0].GetY())));
+	if (value < 0)
+	{
+		return -(value);
+	}
+	return value;
 }
 
 double Triangle::GetRound(void) const
 {
-	return 0.0;
+	return this->t[0].Distance(this->t[1]) + this->t[1].Distance(this->t[2]) + this->t[2].Distance(this->t[0]);
 }
 
 double Triangle::GetCenterOfGravity(void) const
