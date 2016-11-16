@@ -16,10 +16,12 @@ public:
 	Triangle(const Point& p1, const Point& p2, const Point& p3);
 	Triangle(const Point& p1, const Point& p2, const double& t2_x, const double& t2_y);
 	Triangle(const Point& p1, const double& t1_x, const double& t1_y, const double& t2_x, const double& t2_y);
+	Triangle(const Triangle& t);
 	void SetTriangle(const double& t0_x, const double& t0_y, const double& t1_x, const double& t1_y, const double& t2_x, const double& t2_y);
 	void SetTriangle(const Point& p1, const Point& p2, const Point& p3);
 	void SetTriangle(const Point& p1, const Point& p2, const double& t2_x, const double& t2_y);
 	void SetTriangle(const Point& p1, const double& t1_x, const double& t1_y, const double& t2_x, const double& t2_y);
+	void SetTriangle(const Triangle& t);
 	void SetP0(const double& x, const double& y);
 	void SetP0(const Point& p);
 	void SetP1(const double& x, const double& y);

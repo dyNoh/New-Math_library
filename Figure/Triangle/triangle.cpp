@@ -31,6 +31,11 @@ Triangle::Triangle(const Point & p1, const double & t1_x, const double & t1_y, c
 	this->t[2].SetPoint(t2_x, t2_y);
 }
 
+Triangle::Triangle(const Triangle & t)
+{
+	this->SetTriangle(t);
+}
+
 void Triangle::SetTriangle(const double & t0_x, const double & t0_y, const double & t1_x, const double & t1_y, const double & t2_x, const double & t2_y)
 {
 	this->t[0].SetPoint(t0_x, t0_y);
@@ -57,6 +62,13 @@ void Triangle::SetTriangle(const Point & p1, const double & t1_x, const double &
 	this->t[0].SetPoint(p1.GetX(), p1.GetY());
 	this->t[1].SetPoint(t1_x, t1_y);
 	this->t[2].SetPoint(t2_x, t2_y);
+}
+
+void Triangle::SetTriangle(const Triangle & t)
+{
+	this->t[0].SetPoint(t.GetP0());
+	this->t[1].SetPoint(t.GetP1());
+	this->t[2].SetPoint(t.GetP2());
 }
 
 void Triangle::SetP0(const double & x, const double & y)
