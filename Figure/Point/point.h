@@ -20,8 +20,8 @@ public:
 	Point GetPoint(void) const;
 	double GetX(void) const;
 	double GetY(void) const;
-	double Distance(const double& x, const double& y);	// 다른 점과의 거리
-	double Distance(const Point& p);	// 다른 점과의 거리
+	double Distance(const double& x, const double& y) const;	// 다른 점과의 거리
+	double Distance(const Point& p) const;	// 다른 점과의 거리
 	void ShowData(void) const;			// 정보 나타내기
 	~Point();							// 소멸자
 };

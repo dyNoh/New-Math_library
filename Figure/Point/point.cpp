@@ -54,7 +54,7 @@ double Point::GetY(void) const
 	return this->y;
 }
 
-double Point::Distance(const double & x, const double & y)
+double Point::Distance(const double & x, const double & y) const
 {
 	double xDis = this->x - x;
 	double yDis = this->y - y;
@@ -67,7 +67,7 @@ double Point::Distance(const double & x, const double & y)
 	return Sqrt(Pow(xDis) + Pow(yDis));
 }
 
-double Point::Distance(const Point & p)
+double Point::Distance(const Point & p) const
 {
 	double xDis = this->x - p.x;
 	double yDis = this->y - p.y;
