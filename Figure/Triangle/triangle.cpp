@@ -1,4 +1,7 @@
+#include <iostream>
 #include "triangle.h"
+using std::cout;
+using std::endl;
 
 Triangle::Triangle(const double & t0_x, const double & t0_y, const double & t1_x, const double & t1_y, const double & t2_x, const double & t2_y)
 {
@@ -118,22 +121,22 @@ void Triangle::SetP2(const Point & p)
 
 Triangle Triangle::GetTriangle(void) const
 {
-	return Triangle();
+	return Triangle(this->GetP0(), this->GetP1(), this->GetP2());
 }
 
 Point Triangle::GetP0(void) const
 {
-	return Point();
+	return Point(this->t[0].GetPoint);
 }
 
 Point Triangle::GetP1(void) const
 {
-	return Point();
+	return Point(this->t[1].GetPoint);
 }
 
 Point Triangle::GetP2(void) const
 {
-	return Point();
+	return Point(this->t[2].GetPoint);
 }
 
 double Triangle::GetArea(void) const
@@ -175,6 +178,12 @@ double Triangle::GetCircumcenter(void) const
 
 void Triangle::ShowData(void) const
 {
+	cout << "t[0].x : " << this->GetP0().GetX() << endl;
+	cout << "t[0].y : " << this->GetP0().GetY() << endl;
+	cout << "t[1].x : " << this->GetP1().GetX() << endl;
+	cout << "t[1].y : " << this->GetP1().GetY() << endl;
+	cout << "t[2].x : " << this->GetP2().GetX() << endl;
+	cout << "t[2].y : " << this->GetP2().GetY() << endl;
 }
 
 Triangle::~Triangle()
