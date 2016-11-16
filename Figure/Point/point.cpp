@@ -7,14 +7,12 @@ using std::endl;
 
 Point::Point(double x, double y)
 {
-	this->x = x;
-	this->y = y;
+	this->SetPoint(x, y);
 }
 
 Point::Point(const Point & p)
 {
-	this->x = p.x;
-	this->y = p.y;
+	this->SetPoint(p);
 }
 
 void Point::SetPoint(const double & x, const double & y)
