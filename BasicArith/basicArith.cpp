@@ -71,13 +71,20 @@ double Pow(const double & num, const int & n)
 
 static double Sinus(double arg, int quad)
 {
-
+	return 0.0
 }
+
 double Cos(double x)
 {
-
+	return 0.0
 }
+
 double Sin(double x)
 {
-	
+	return 0.0
+}
+
+double PowE(const double& n = 2)
+{
+	return 0.0
 }
