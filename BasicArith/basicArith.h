@@ -24,8 +24,9 @@ double Div(double num1, double num2);						// num1 / num2
 double Sqrt(const double& num);								// Square root, 제곱근
 double Pow(const double& num, const int& n = 2);			// n제곱
 static double Sinus(double arg, int quad);                  // 사인, 코사인 계산
-double Cos(double x);                                       // 코사인(라디안)
-double Sin(double x);                                       // 사인(라디안)
+double Cos(double x);                                       // 코사인(각도)
+double Sin(double x);                                       // 사인(각도)
+double Tan(double x);										// 탄젠트(각도)
 double PowE(const double& n = 2);                           // e의 n제곱
 
 
