@@ -68,3 +68,16 @@ double Pow(const double & num, const int & n)
 
 	return val;
 }
+
+static double Sinus(double arg, int quad)
+{
+
+}
+double Cos(double x)
+{
+
+}
+double Sin(double x)
+{
+	
+}
