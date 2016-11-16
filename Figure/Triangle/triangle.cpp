@@ -5,30 +5,22 @@ using std::endl;
 
 Triangle::Triangle(const double & t0_x, const double & t0_y, const double & t1_x, const double & t1_y, const double & t2_x, const double & t2_y)
 {
-	this->t[0].SetPoint(t0_x, t0_y);
-	this->t[1].SetPoint(t1_x, t1_y);
-	this->t[2].SetPoint(t2_x, t2_y);
+	this->SetTriangle(t0_x, t0_y, t1_x, t1_y, t2_x, t2_y);
 }
 
 Triangle::Triangle(const Point & p1, const Point & p2, const Point & p3)
 {
-	this->t[0].SetPoint(p1.GetX(), p1.GetY());
-	this->t[1].SetPoint(p2.GetX(), p2.GetY());
-	this->t[2].SetPoint(p3.GetX(), p3.GetY());
+	this->SetTriangle(p1, p2, p3);
 }
 
 Triangle::Triangle(const Point & p1, const Point & p2, const double & t2_x, const double & t2_y)
 {
-	this->t[0].SetPoint(p1.GetX(), p1.GetY());
-	this->t[1].SetPoint(p2.GetX(), p2.GetY());
-	this->t[2].SetPoint(t2_x, t2_y);
+	this->SetTriangle(p1, p2, t2_x, t2_y);
 }
 
 Triangle::Triangle(const Point & p1, const double & t1_x, const double & t1_y, const double & t2_x, const double & t2_y)
 {
-	this->t[0].SetPoint(p1.GetX(), p1.GetY());
-	this->t[1].SetPoint(t1_x, t1_y);
-	this->t[2].SetPoint(t2_x, t2_y);
+	this->SetTriangle(p1, t1_x, t1_y, t2_x, t2_y);
 }
 
 Triangle::Triangle(const Triangle & t)

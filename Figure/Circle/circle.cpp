@@ -6,22 +6,19 @@ using std::endl;
 
 Circle::Circle(double x, double y, double r)
 {
-	this->p.SetPoint(x, y);
-	this->r = r;
+	this->SetCircle(x,y,r);
 
 }
 
 Circle::Circle(const Point & p, const double & r)
 {
-	this->p.SetPoint(p);
-	this->r = r;
+	this->SetCircle(p,r);
 
 }
 
 Circle::Circle(const Circle & c)
 {
-	this->p.SetPoint(c.p);
-	this->r = c.r;
+	this->SetCircle(c)
 }
 
 void Circle::SetCircle(const double & x, const double & y, const double & r)
