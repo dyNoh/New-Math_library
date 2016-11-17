@@ -69,6 +69,55 @@ double Pow(const double & num, const int & n)
 	return val;
 }
 
+double Cos(double x)
+{
+	return 0.0;
+}
+
+double Sin(double x)
+{
+	if (x < -180 || x > 180)
+	{
+		int temp = x / 180;
+		if (temp > 0)
+		{
+			if (!(temp % 2))
+				x = x - (180 * temp);
+			else
+				x = x - (180 * (temp + 1));
+		}
+		else if (temp < 0)
+		{
+			if (!(temp % 2))
+				x = x + (180 * -temp);
+			else
+				x = x + (180 * (-temp + 1));
+		}
+	}
+	double x1 = x * PI / 180;
+	double sum = x1;
+	double result = x1;
+	double fact = 1.0f;
+	double x2 = x1*x1*-1.0f;
+
+	//유한한 테일러 급수 전개
+	for (int i = 1; i < 9; ++i)
+	{
+		fact *= ((2 * i) * (2 * i + 1));
+		result *= x2;
+		sum += (result / fact);
+	}
+
+	return sum;
+}
+
+double Tan(double x)
+{
+	return 0.0;
+}
+
+/*
+	테일러 급수로 대체
 static double Sinus(double arg, int quad)
 {
 	double e, f;
@@ -128,6 +177,9 @@ double Tan(double x)
 		return (Sinus(x * PI / 180, 0) / (Sinus(-x * PI / 180, 1)));
 	return (Sinus(x * PI / 180, 0) / (Sinus(x * PI / 180, 1)));
 }
+
+*/
+
 
 double PowE(const double & n)
 {
