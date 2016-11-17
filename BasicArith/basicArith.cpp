@@ -23,12 +23,11 @@ double Div(double num1, double num2)
 
 double Sqrt(const double& num)
 {
-	// 이 부분에 num이 0 이하일 경우 예외처리
-	/*if (num <= 0)
+	// num이 0 이하일 경우 예외처리
+	if (num <= 0)
 	{
-		cout << "NaN" << endl;
 		return 0.0;
-	}*/
+	}
 
 	double Xn = 1;		// Xn
 	double XnP1 = 1;	// Xn+1
@@ -71,7 +70,7 @@ double Pow(const double & num, const int & n)
 
 double Cos(const double & x)
 {
-	return 0.0;
+	return Sin(x + 90);
 }
 
 double Sin(const double & x)
@@ -107,7 +106,7 @@ double Sin(const double & x)
 		fact *= ((2 * i) * (2 * i + 1));
 		result *= powX;
 		sum += (result / fact);
-		if ((result / fact) < 0.00001 && (result / fact) > -0.00001) // 정밀도 0.00001
+		if ((result / fact) < 0.00001 && (result / fact) > -0.00001) // 정확도 |0.00001|
 			return sum;
 		i++;
 	}
@@ -115,73 +114,23 @@ double Sin(const double & x)
 
 double Tan(const double & x)
 {
-	return 0.0;
+	return (Sin(x) / Sin(x + 90));
 }
 
-/*
-	테일러 급수로 대체
-static double Sinus(double arg, int quad)
+double Csc(const double & x)
 {
-	double e, f;
-	int k;
-	double ysq;
-	double x, y;
-	double temp1, temp2;
-	x = arg;
-	if (x < 0)
-	{
-		x = -x;
-		quad = quad + 2;
-	}
-	x = x * twoopi;
-	if (x > 32764)
-	{
-		y = modf(x, &e);
-		e = e + quad;
-		modf(0.25*e, &f);
-		quad = e - 4 * f;
-	}
-	else
-	{
-		k = x;
-		y = x - k;
-		quad = (quad + k) & 03;
-	}
-	if (quad & 01)
-	{
-		y = 1 - y;
-	}
-	if (quad > 1)
-	{
-		y = -y;
-	}
-	ysq = y*y;
-	temp1 = ((((p4*ysq + p3)*ysq + p2)*ysq + p1)*ysq + p0)*y;
-	temp2 = ((((ysq + q3)*ysq + q2)*ysq + q1)*ysq + q0);
-	return(temp1 / temp2);
+	return (1 / Sin(x));
 }
 
-double Cos(double x)
+double Sec(const double & x)
 {
-	if (x * PI / 180 < 0.0)
-		x = -x;
-	return (Sinus(x * PI / 180, 1));
+	return (1 / Sin(x + 90));
 }
 
-double Sin(double x)
+double Cot(const double & x)
 {
-	return (Sinus(x * PI / 180, 0));
+	return (Sin(x + 90) / Sin(x));
 }
-
-double Tan(double x)
-{
-	if(x * PI / 180 < 0.0)
-		return (Sinus(x * PI / 180, 0) / (Sinus(-x * PI / 180, 1)));
-	return (Sinus(x * PI / 180, 0) / (Sinus(x * PI / 180, 1)));
-}
-
-*/
-
 
 double PowE(const double & n)
 {
