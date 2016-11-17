@@ -69,49 +69,51 @@ double Pow(const double & num, const int & n)
 	return val;
 }
 
-double Cos(double x)
+double Cos(const double & x)
 {
 	return 0.0;
 }
 
-double Sin(double x)
+double Sin(const double & x)
 {
+	double val = x;
 	if (x < -180 || x > 180)
 	{
-		int temp = x / 180;
+		int temp = (int)(x / 180);
 		if (temp > 0)
 		{
 			if (!(temp % 2))
-				x = x - (180 * temp);
+				val = x - (180 * temp);
 			else
-				x = x - (180 * (temp + 1));
+				val = x - (180 * (temp + 1));
 		}
 		else if (temp < 0)
 		{
 			if (!(temp % 2))
-				x = x + (180 * -temp);
+				val = x + (180 * -temp);
 			else
-				x = x + (180 * (-temp + 1));
+				val = x + (180 * (-temp + 1));
 		}
 	}
-	double x1 = x * PI / 180;
-	double sum = x1;
-	double result = x1;
+	double rad = val * PI / 180;
+	double sum = rad;
+	double result = rad;
 	double fact = 1.0f;
-	double x2 = x1*x1*-1.0f;
+	double powX = -Pow(rad);
+	int i = 1;
 
-	//유한한 테일러 급수 전개
-	for (int i = 1; i < 9; ++i)
+	while (1)
 	{
 		fact *= ((2 * i) * (2 * i + 1));
-		result *= x2;
+		result *= powX;
 		sum += (result / fact);
+		if ((result / fact) < 0.00001 && (result / fact) > -0.00001) // 정밀도 0.00001
+			return sum;
+		i++;
 	}
-
-	return sum;
 }
 
-double Tan(double x)
+double Tan(const double & x)
 {
 	return 0.0;
 }
