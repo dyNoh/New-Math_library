@@ -2,26 +2,33 @@
 
 Line::Line(const double & l0_x, const double & l0_y, const double & l1_x, const double & l1_y)
 {
+	this->SetLine(lo_x, l0_y, l1_x, l1_y);
 }
 
 Line::Line(const Point & p1, const Point & p2)
 {
+	this->SetLine(p1, p2);
 }
 
 Line::Line(const Point & p1, const double & l1_x, const double & l1_y)
 {
+	this->SetLine(p1, l1_x, l1_y);
 }
 
 Line::Line(const Line & l)
 {
+	this->SetLine(l);
 }
 
 void Line::SetLine(const double & l0_x, const double & l0_y, const double & l1_x, const double & l1_y)
 {
+	this->t[0].SetLine(lo_x, l0_y);
+	this->t[1].SetLine(l1_x, l1_y);
 }
 
 void Line::SetLine(const Point & p1, const Point & p2)
 {
+
 }
 
 void Line::SetLine(const Point & p1, const double & l1_x, const double & l1_y)
