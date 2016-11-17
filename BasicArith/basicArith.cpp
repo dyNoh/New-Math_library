@@ -1,5 +1,7 @@
 #include "basicArith.h"
 #include <iostream>
+using std::cout;
+using std::endl;
 
 double Add(double num1, double num2)
 {
@@ -107,7 +109,11 @@ double Sin(const double & x)
 		result *= powX;
 		sum += (result / fact);
 		if ((result / fact) < 0.00001 && (result / fact) > -0.00001) // 정확도 |0.00001|
+		{
+			if (sum < 0.00001 && sum > -0.00001) // |0.00001| 미만의 크기의 숫자는 0 처리 또한 Tan 함수에서 역수일 때 무한대 처리
+				return 0;
 			return sum;
+		}
 		i++;
 	}
 }
