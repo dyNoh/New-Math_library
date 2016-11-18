@@ -2,7 +2,7 @@
 
 Line::Line(const double & l0_x, const double & l0_y, const double & l1_x, const double & l1_y)
 {
-	this->SetLine(lo_x, l0_y, l1_x, l1_y);
+	this->SetLine(l0_x, l0_y, l1_x, l1_y);
 }
 
 Line::Line(const Point & p1, const Point & p2)
@@ -73,12 +73,12 @@ Line Line::GetLine(void) const
 
 Point Line::GetP0(void) const
 {
-	return Point(this->l[0].GetLine());
+	return Point(this->l[0].GetPoint());
 }
 
 Point Line::GetP1(void) const
 {
-	return Point(this->l[1].GetLine());
+	return Point(this->l[1].GetPoint());
 }
 
 double Line::Distance(void) const
