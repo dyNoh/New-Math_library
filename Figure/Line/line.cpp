@@ -22,48 +22,48 @@ Line::Line(const Line & l)
 
 void Line::SetLine(const double & l0_x, const double & l0_y, const double & l1_x, const double & l1_y)
 {
-	this->l[0].SetLine(lo_x, l0_y);
-	this->l[1].SetLine(l1_x, l1_y);
+	this->l[0].SetPoint(l0_x, l0_y);
+	this->l[1].SetPoint(l1_x, l1_y);
 }
 
 void Line::SetLine(const Point & p1, const Point & p2)
 {
-	this->l[0].SetLine(p1.GetX(),p1.GetY());
-	this->l[1].SetLine(p2.GetX(),p2.GetY());
+	this->l[0].SetPoint(p1.GetX(),p1.GetY());
+	this->l[1].SetPoint(p2.GetX(),p2.GetY());
 }
 
 void Line::SetLine(const Point & p1, const double & l1_x, const double & l1_y)
 {
-	this->l[0].SetLine(p1.GetX(),p1.GetY());
-	this->l[1].SetLine(l1_x,l1_y);
+	this->l[0].SetPoint(p1.GetX(),p1.GetY());
+	this->l[1].SetPoint(l1_x,l1_y);
 }
 
 void Line::SetLine(const Line & l)
 {
-	this->l[0].SetLine(l.GetP0());
-	this->l[1].SetLine(l.GetP1());
+	this->l[0].SetPoint(l.GetP0());
+	this->l[1].SetPoint(l.GetP1());
 }
 
 void Line::SetP0(const double & x, const double & y)
 {
-	this->l[0].SetLine(x);
-	this->l[0].SetLine(y);
+	this->l[0].SetX(x);
+	this->l[0].SetY(y);
 }
 
 void Line::SetP0(const Point & p)
 {
-	this->l[0].SetLine(p.GetX(),p.GetY());
+	this->l[0].SetPoint(p.GetX(), p.GetY());
 }
 
 void Line::SetP1(const double & x, const double & y)
 {
-	this->l[1].SetLine(x);
-	this->l[1].SetLine(y);
+	this->l[1].SetX(x);
+	this->l[1].SetY(y);
 }
 
 void Line::SetP1(const Point & p)
 {
-	this->l[0].SetLine(p.GetX(),p.GetY());
+	this->l[1].SetPoint(p.GetX(), p.GetY());
 }
 
 Line Line::GetLine(void) const
