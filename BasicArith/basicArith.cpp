@@ -138,7 +138,15 @@ double Cot(const double & x)
 	return (Sin(x + 90) / Sin(x));
 }
 
-double PowE(const double & n)
+double PowE(const double & n) //e^n
 {
-	return 0.0;
+	double acc=10000;   //for문을 많이 돌릴수록 e^n의 값이 정확해짐
+	double ans = 1;
+	double temp = 1;
+	for (int i = 1;i <= acc; i++)
+	{
+		temp = (temp*power) / i;
+		ans = ans + temp;
+	}
+	return ans;
 }
