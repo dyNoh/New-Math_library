@@ -158,3 +158,17 @@ double PowE(const double & n) //e^n
 
 	return val;
 }
+
+double Ln(const double & x)
+{
+	double val = 1;
+	double temp = 1;
+	int i = 1;
+
+	return 0.0;
+}
+
+double Log(const double & x, const double & a)
+{
+	return 0.0;
+}
