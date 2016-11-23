@@ -158,3 +158,57 @@ double PowE(const double & n) //e^n
 
 	return val;
 }
+
+double logAlgorithm(const double & x)
+{
+	double result = 1;
+	double y = (x - 1) / (x + 1);
+	double count = 3;
+	for (int i = 2; i <= 1000; i += 2)
+	{
+		result += (Pow(y, i) / count);
+		count += 2;
+	}
+	return 2 * y * result;
+}
+
+double ln(const double & x)
+{
+	if (x <= 0) //예외처리
+	{
+		return 0;
+	}
+	else
+	{
+		return logAlgorithm(x);
+	}
+}
+
+double Log(const double & x)
+{
+	if (x <= 0) //예외처리
+	{
+		return 0;
+	}
+	else
+	{
+		return logAlgorithm(x) / logAlgorithm(10) ;
+	}
+}
+
+double Log(const double& x, const double& a)
+{
+	if (a <= 0) //예외처리
+	{
+		return 0;
+	}
+    if (x <= 0) //예외처리
+	{
+		return 0;
+	}
+	else
+	{
+		return logAlgorithm(x) / logAlgorithm(a);
+	}
+
+}
