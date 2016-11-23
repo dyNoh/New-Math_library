@@ -179,11 +179,7 @@ double Ln(const double & x)
 
 double Log(const double& x, const double& a)
 {
-	if (a <= 0) //예외처리
-	{
-		return 0;
-	}
-	if (x <= 0) //예외처리
+	if (a <= 0 || a == 1 || x <= 0) //예외처리
 	{
 		return 0;
 	}
