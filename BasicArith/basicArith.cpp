@@ -159,6 +159,7 @@ double PowE(const double & n) //e^n
 	return val;
 }
 
+<<<<<<< HEAD
 double logAlgorithm(const double & x)
 {
 	double result = 1;
@@ -172,7 +173,7 @@ double logAlgorithm(const double & x)
 	return 2 * y * result;
 }
 
-double ln(const double & x)
+double Ln(const double & x)
 {
 	if (x <= 0) //예외처리
 	{
@@ -210,5 +211,3 @@ double Log(const double& x, const double& a)
 	{
 		return logAlgorithm(x) / logAlgorithm(a);
 	}
-
-}
