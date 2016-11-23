@@ -140,13 +140,21 @@ double Cot(const double & x)
 
 double PowE(const double & n) //e^n
 {
-	double acc=10000;   //for문을 많이 돌릴수록 e^n의 값이 정확해짐
-	double ans = 1;
+	double val = 1;
 	double temp = 1;
-	for (int i = 1;i <= acc; i++)
+	int i = 1;
+
+	while (1)
 	{
-		temp = (temp*power) / i;
-		ans = ans + temp;
+		temp = (temp*n) / i;
+		val += temp;
+		if (temp < 0.00001 && temp > -0.00001) // 정확도 |0.00001|
+			break;
+		i++;
 	}
-	return ans;
+
+	if (val < 0.00005 && val > -0.00005) // 이 숫자보다 작을경우 0으로 처리
+		return 0;
+
+	return val;
 }
