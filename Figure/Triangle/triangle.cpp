@@ -121,16 +121,39 @@ double Triangle::GetArea(void) const
 	double value = (0.5)*(((this->t[0].GetX())*(this->t[1].GetY()) + (this->t[1].GetX())*(this->t[2].GetY()) +
 		(this->t[2].GetX())*(this->t[0].GetY())) - ((this->t[0].GetX())*(this->t[2].GetY()) +
 		(this->t[2].GetX())*(this->t[1].GetY()) + (this->t[1].GetX())*(this->t[0].GetY())));
-	if (value < 0)
-	{
-		return -(value);
+
+	if (this->t[0].GetX() == this->t[1].GetX() == this->t[2].GetX() || this->t[0].GetY() == this->t[1].GetY() == this->t[2].GetY()) {
+		cout << "This is not Triangle." << endl;
+		return 0;
 	}
-	return value;
+	else if (this->t[0].GetX() == this->t[0].GetY() && this->t[1].GetX() == this->t[1].GetY() && this->t[2].GetX() == this->t[2].GetY()) {
+		cout << "This is not Triangle." << endl;
+		return 0;
+	}
+	else
+	{
+		if (value < 0)
+		{
+			return -(value);
+		}
+		return value;
+	}
 }
 
 double Triangle::GetRound(void) const
 {
-	return this->t[0].Distance(this->t[1]) + this->t[1].Distance(this->t[2]) + this->t[2].Distance(this->t[0]);
+	if (this->t[0].GetX() == this->t[1].GetX() == this->t[2].GetX() || this->t[0].GetY() == this->t[1].GetY() == this->t[2].GetY()) {
+		cout << "This is not Triangle." << endl;
+		return 0;
+	}
+	else if (this->t[0].GetX() == this->t[0].GetY() && this->t[1].GetX() == this->t[1].GetY() && this->t[2].GetX() == this->t[2].GetY()) {
+		cout << "This is not Triangle." << endl;
+		return 0;
+	}
+	else
+	{
+		return this->t[0].Distance(this->t[1]) + this->t[1].Distance(this->t[2]) + this->t[2].Distance(this->t[0]);
+	}
 }
 
 double Triangle::GetCenterOfGravity(void) const
