@@ -33,6 +33,11 @@ void Triangle::SetTriangle(const double & t0_x, const double & t0_y, const doubl
 	this->t[0].SetPoint(t0_x, t0_y);
 	this->t[1].SetPoint(t1_x, t1_y);
 	this->t[2].SetPoint(t2_x, t2_y);
+
+	if (BubbleSort(t[0], t[1], t[2]))
+	{
+		SetDefault();
+	}
 }
 
 void Triangle::SetTriangle(const Point & p1, const Point & p2, const Point & p3)
@@ -40,6 +45,11 @@ void Triangle::SetTriangle(const Point & p1, const Point & p2, const Point & p3)
 	this->t[0].SetPoint(p1.GetX(), p1.GetY());
 	this->t[1].SetPoint(p2.GetX(), p2.GetY());
 	this->t[2].SetPoint(p3.GetX(), p3.GetY());
+
+	if (BubbleSort(t[0], t[1], t[2]))
+	{
+		SetDefault();
+	}
 }
 
 void Triangle::SetTriangle(const Point & p1, const Point & p2, const double & t2_x, const double & t2_y)
@@ -47,6 +57,11 @@ void Triangle::SetTriangle(const Point & p1, const Point & p2, const double & t2
 	this->t[0].SetPoint(p1.GetX(), p1.GetY());
 	this->t[1].SetPoint(p2.GetX(), p2.GetY());
 	this->t[2].SetPoint(t2_x, t2_y);
+
+	if (BubbleSort(t[0], t[1], t[2]))
+	{
+		SetDefault();
+	}
 }
 
 void Triangle::SetTriangle(const Point & p1, const double & t1_x, const double & t1_y, const double & t2_x, const double & t2_y)
@@ -54,6 +69,11 @@ void Triangle::SetTriangle(const Point & p1, const double & t1_x, const double &
 	this->t[0].SetPoint(p1.GetX(), p1.GetY());
 	this->t[1].SetPoint(t1_x, t1_y);
 	this->t[2].SetPoint(t2_x, t2_y);
+
+	if (BubbleSort(t[0], t[1], t[2]))
+	{
+		SetDefault();
+	}
 }
 
 void Triangle::SetTriangle(const Triangle & t)
@@ -61,6 +81,11 @@ void Triangle::SetTriangle(const Triangle & t)
 	this->t[0].SetPoint(t.GetP0());
 	this->t[1].SetPoint(t.GetP1());
 	this->t[2].SetPoint(t.GetP2());
+
+	if (BubbleSort(t.GetP0(), t.GetP1(), t.GetP2()))
+	{
+		SetDefault();
+	}
 }
 
 void Triangle::SetP0(const double & x, const double & y)
@@ -122,38 +147,16 @@ double Triangle::GetArea(void) const
 		(this->t[2].GetX())*(this->t[0].GetY())) - ((this->t[0].GetX())*(this->t[2].GetY()) +
 		(this->t[2].GetX())*(this->t[1].GetY()) + (this->t[1].GetX())*(this->t[0].GetY())));
 
-	if (this->t[0].GetX() == this->t[1].GetX() == this->t[2].GetX() || this->t[0].GetY() == this->t[1].GetY() == this->t[2].GetY()) {
-		cout << "This is not Triangle." << endl;
-		return 0;
-	}
-	else if (this->t[0].GetX() == this->t[0].GetY() && this->t[1].GetX() == this->t[1].GetY() && this->t[2].GetX() == this->t[2].GetY()) {
-		cout << "This is not Triangle." << endl;
-		return 0;
-	}
-	else
+	if (value < 0)
 	{
-		if (value < 0)
-		{
-			return -(value);
-		}
-		return value;
+		return -(value);
 	}
+	return value;
 }
 
 double Triangle::GetRound(void) const
 {
-	if (this->t[0].GetX() == this->t[1].GetX() == this->t[2].GetX() || this->t[0].GetY() == this->t[1].GetY() == this->t[2].GetY()) {
-		cout << "This is not Triangle." << endl;
-		return 0;
-	}
-	else if (this->t[0].GetX() == this->t[0].GetY() && this->t[1].GetX() == this->t[1].GetY() && this->t[2].GetX() == this->t[2].GetY()) {
-		cout << "This is not Triangle." << endl;
-		return 0;
-	}
-	else
-	{
-		return this->t[0].Distance(this->t[1]) + this->t[1].Distance(this->t[2]) + this->t[2].Distance(this->t[0]);
-	}
+	return this->t[0].Distance(this->t[1]) + this->t[1].Distance(this->t[2]) + this->t[2].Distance(this->t[0]);
 }
 
 double Triangle::GetCenterOfGravity(void) const
@@ -193,4 +196,36 @@ void Triangle::ShowData(void) const
 
 Triangle::~Triangle()
 {
+}
+
+int Triangle::BubbleSort(const Point& p1, const Point& p2, const Point& p3)
+{
+	double d1 = p1.Distance(p2);
+	double d2 = p2.Distance(p3);
+	double d3 = p3.Distance(p1);
+	double d[3] = { d1,d2,d3 };
+
+	double temp;
+	for (int i = 0; i < 2; i++) {
+		for (int j = i; j < 2 - i; j++) {
+			if (d[j] > d[j + 1]) {
+				temp = d[j];
+				d[j] = d[j + 1];
+				d[j + 1] = temp;
+			}
+		}
+	}
+	if (d[2] >= d[0] + d[1]) {
+		return 1;
+	}
+	return 0;
+
+}
+
+
+void Triangle::SetDefault(void)
+{
+	this->t[0].SetPoint(0, 0);
+	this->t[1].SetPoint(0, 1);
+	this->t[2].SetPoint(1, 0);
 }

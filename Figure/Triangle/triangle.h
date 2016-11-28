@@ -42,6 +42,8 @@ public:
 	void ShowData(void) const;	// 정보 나타내기
 	// 삼각형 각도 구하기 등 추가
 	~Triangle();	// 소멸자
+	int BubbleSort(const Point& p1, const Point& p2, const Point& p3); // 삼각형 성립 조건 확인
+	void SetDefault(void);
 };
 
 #endif
