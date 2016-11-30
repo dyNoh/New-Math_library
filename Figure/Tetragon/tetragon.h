@@ -8,7 +8,7 @@ class Tetragon
 private :
 	Point t[4];
 public :
-	Tetragon(const double& t0_x = 0, const double& t0_y = 0, const double& t1_x = 0, const double& t1_y = 1, const double& t2_x = 1, const double& t2_y = 1, const double& t3_x = 1, const double& t3_y = 0);
+	Tetragon(const double& t0_x = 0, const double& t0_y = 0, const double& t1_x = 1, const double& t1_y = 0, const double& t2_x = 1, const double& t2_y = 1, const double& t3_x = 0, const double& t3_y = 1);
 	Tetragon(const Point& p1, const Point& p2, const Point& p3, const Point& p4);
 	Tetragon(const Point& p1, const Point& p2, const Point& p3, const double& t3_x, const double& t3_y);
 	Tetragon(const Point& p1,const Point& p2, const double& t2_x, const double& t2_y, const double& t3_x, const double& t3_y);
@@ -38,7 +38,7 @@ public :
 	void ShowData(void) const;	// 정보 나타내기
 	int BubbleSort(const Point& p1, const Point& p2, const Point& p3, const Point& p4); // 사각형 성립 조건 확인
 	void SetDefault(void);
-	~Tetragon();	// 소멸자
+//	~Tetragon();	// 소멸자
 
 };
 

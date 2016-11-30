@@ -152,6 +152,7 @@ Point Tetragon::GetP3(void) const
 
 double Tetragon::GetArea(void) const
 {
+		
 	return 0.0;
 }
 
@@ -174,12 +175,32 @@ void Tetragon::ShowData(void) const
 
 int Tetragon::BubbleSort(const Point & p1, const Point & p2, const Point & p3, const Point & p4)
 {
+	double d1 = p1.Distance(p2);
+	double d2 = p2.Distance(p3);
+	double d3 = p3.Distance(p4);
+	double d4 = p4.Distance(p1);
+	double d[4] = { d1,d2,d3,d4 };
+	double temp;
+	p1.GetX;
+	p1.GetY;
+	p2.GetX;
+	p2.GetY;
+	p3.GetX;
+	p3.GetY;dasdasd
+	p4.GetX;
+	p4.GetY;
+
 }
 
 void Tetragon::SetDefault(void)
 {
+	this->t[0].SetPoint(0, 0);
+	this->t[1].SetPoint(1, 0);
+	this->t[2].SetPoint(1, 1);
+	this->t[3].SetPoint(0, 1);
 }
-
+/*
 Tetragon::~Tetragon()
 {
 }
+*/
