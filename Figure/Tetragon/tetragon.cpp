@@ -1,5 +1,6 @@
 #include<iostream>
 #include "tetragon.h"
+#include "../Point/point.h"
 using std::cout;
 using std::endl;
 
@@ -152,8 +153,16 @@ Point Tetragon::GetP3(void) const
 
 double Tetragon::GetArea(void) const
 {
-		
-	return 0.0;
+	double value = ((0.5)*(((this->t[0].GetX())*(this->t[1].GetY()) + (this->t[1].GetX())*(this->t[2].GetY()) +
+		(this->t[2].GetX())*(this->t[0].GetY())) - ((this->t[0].GetX())*(this->t[2].GetY()) +
+		(this->t[2].GetX())*(this->t[1].GetY()) + (this->t[1].GetX())*(this->t[0].GetY())))) +
+			((0.5)*(((this->t[0].GetX())*(this->t[3].GetY()) + (this->t[3].GetX())*(this->t[2].GetY()) +
+		(this->t[2].GetX())*(this->t[0].GetY())) - ((this->t[0].GetX())*(this->t[2].GetY()) +
+				(this->t[2].GetX())*(this->t[3].GetY()) + (this->t[3].GetX())*(this->t[0].GetY())))
+				);
+
+
+	return value;
 }
 
 double Tetragon::GetRound(void) const
@@ -175,20 +184,21 @@ void Tetragon::ShowData(void) const
 
 int Tetragon::Exception(const Point & p1, const Point & p2, const Point & p3, const Point & p4)
 {
-	double d1 = p1.Distance(p2);
-	double d2 = p2.Distance(p3);
-	double d3 = p3.Distance(p4);
-	double d4 = p4.Distance(p1);
-	double d[4] = { d1,d2,d3,d4 };
-	double temp;
-	p1.GetX;
-	p1.GetY;
-	p2.GetX;
-	p2.GetY;
-	p3.GetX;
-	p3.GetY;dasdasd
-	p4.GetX;
-	p4.GetY;
+	if (
+		(GetP0().GetX() == GetP1().GetX() && GetP0().GetY() == GetP1().GetY()) ||
+		(GetP0().GetX() == GetP2().GetX() && GetP0().GetY() == GetP2().GetY()) ||
+		(GetP0().GetX() == GetP3().GetX() && GetP0().GetY() == GetP3().GetY()) ||
+		(GetP1().GetX() == GetP2().GetX() && GetP1().GetY() == GetP2().GetY()) ||
+		(GetP1().GetX() == GetP3().GetX() && GetP1().GetY() == GetP3().GetY()) ||
+		(GetP2().GetX() == GetP3().GetX() && GetP2().GetY() == GetP3().GetY())
+		)
+	{
+		return 0;
+	}
+
+	
+
+
 
 }
 
