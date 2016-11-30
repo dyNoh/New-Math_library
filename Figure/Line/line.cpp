@@ -24,24 +24,44 @@ void Line::SetLine(const double & l0_x, const double & l0_y, const double & l1_x
 {
 	this->l[0].SetPoint(l0_x, l0_y);
 	this->l[1].SetPoint(l1_x, l1_y);
+
+	if (Exception(l[0], l[1]))
+	{
+		SetDefault();
+	}
 }
 
 void Line::SetLine(const Point & p1, const Point & p2)
 {
 	this->l[0].SetPoint(p1.GetX(),p1.GetY());
 	this->l[1].SetPoint(p2.GetX(),p2.GetY());
+
+	if (Exception(l[0], l[1]))
+	{
+		SetDefault();
+	}
 }
 
 void Line::SetLine(const Point & p1, const double & l1_x, const double & l1_y)
 {
 	this->l[0].SetPoint(p1.GetX(),p1.GetY());
 	this->l[1].SetPoint(l1_x,l1_y);
+
+	if (Exception(l[0], l[1]))
+	{
+		SetDefault();
+	}
 }
 
 void Line::SetLine(const Line & l)
 {
 	this->l[0].SetPoint(l.GetP0());
 	this->l[1].SetPoint(l.GetP1());
+
+	if (Exception(l.GetP0(), l.GetP1()))
+	{
+		SetDefault();
+	}
 }
 
 void Line::SetP0(const double & x, const double & y)
@@ -88,4 +108,18 @@ double Line::Distance(void) const
 
 Line::~Line()
 {
+}
+
+int Line::Exception(const Point & p1, const Point & p2)
+{
+	if (p1.GetX() == p2.GetX() &&p1.GetY()==p2.GetY())
+	{
+		return 1;
+	}
+	return 0;
+}
+void Line::SetDefault(void)
+{
+	this->l[0].SetPoint(0, 0);
+	this->l[1].SetPoint(1, 1);
 }
