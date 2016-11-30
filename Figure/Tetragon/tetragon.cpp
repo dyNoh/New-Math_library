@@ -157,7 +157,7 @@ double Tetragon::GetArea(void) const
 
 double Tetragon::GetRound(void) const
 {
-	return 0.0;
+	return this->t[0].Distance(this->t[1]) + this->t[1].Distance(this->t[2]) + this->t[2].Distance(this->t[3]) + this->t[3].Distance(this->t[0]);
 }
 
 void Tetragon::ShowData(void) const
