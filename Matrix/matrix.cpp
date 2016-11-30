@@ -3,14 +3,12 @@
 using std::cout;
 using std::endl;
 
-Matrix::Matrix(int row, int col)
+Matrix::Matrix(const int & row, const int & col)
 {
-	this->row = row;
-	this->col = col;
 	SetMatrixSize(row, col);
 }
 
-void Matrix::SetMatrixSize(int row, int col)
+void Matrix::SetMatrixSize(const int & row, const int & col)
 {
 	if (this->row != 0 && this->col != 0)
 	{
@@ -36,7 +34,7 @@ void Matrix::SetMatrixData(double data, int row, int col)
 	this->m[row][col] = data;
 }
 
-void Matrix::ShowData(void) const
+void Matrix::ShowAllData(void) const
 {
 	for (int i = 0; i < this->row; i++)
 	{
@@ -48,9 +46,34 @@ void Matrix::ShowData(void) const
 	}
 }
 
-void Matrix::ShowMatrix(int row, int col) const
+void Matrix::ShowData(int row, int col) const
 {
 	cout << this->m[row][col] << endl;
+}
+
+Matrix& Matrix::Add(const Matrix & m)
+{
+	/*if (this->row != m.row && this->col != m.col)
+	{
+		cout << "더할 수 없음" << endl;
+		return Matrix();
+	}
+
+	Matrix temp(row, col);
+
+	for (int i = 0; i < row; i++)
+	{
+		for (int j = 0; j < col; j++)
+		{
+			temp.SetMatrixData(this->m[i][j] + m.m[i][j], i, j);
+		}
+	}
+	return temp;*/
+}
+
+Matrix Matrix::Sub(const Matrix & m)
+{
+	return Matrix();
 }
 
 Matrix::~Matrix()
