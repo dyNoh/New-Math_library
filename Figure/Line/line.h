@@ -29,6 +29,9 @@ public:
 	Point GetP1(void) const;
 	double Distance(void) const; // 길이
 	~Line();	// 소멸자
+private:
+	int Exception(const Point & p1, const Point & p2);//예외처리
+	void SetDefault(void);
 };
 
 #endif

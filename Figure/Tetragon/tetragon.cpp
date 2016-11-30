@@ -158,7 +158,7 @@ double Tetragon::GetArea(void) const
 
 double Tetragon::GetRound(void) const
 {
-	return 0.0;
+	return this->t[0].Distance(this->t[1]) + this->t[1].Distance(this->t[2]) + this->t[2].Distance(this->t[3]) + this->t[3].Distance(this->t[0]);
 }
 
 void Tetragon::ShowData(void) const
@@ -173,7 +173,7 @@ void Tetragon::ShowData(void) const
 	cout << "t[3].y : " << this->GetP3().GetY() << endl;
 }
 
-int Tetragon::BubbleSort(const Point & p1, const Point & p2, const Point & p3, const Point & p4)
+int Tetragon::Exception(const Point & p1, const Point & p2, const Point & p3, const Point & p4)
 {
 	double d1 = p1.Distance(p2);
 	double d2 = p2.Distance(p3);

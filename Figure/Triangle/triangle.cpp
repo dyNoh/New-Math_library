@@ -34,7 +34,7 @@ void Triangle::SetTriangle(const double & t0_x, const double & t0_y, const doubl
 	this->t[1].SetPoint(t1_x, t1_y);
 	this->t[2].SetPoint(t2_x, t2_y);
 
-	if (BubbleSort(t[0], t[1], t[2]))
+	if (Exception(t[0], t[1], t[2]))
 	{
 		SetDefault();
 	}
@@ -46,7 +46,7 @@ void Triangle::SetTriangle(const Point & p1, const Point & p2, const Point & p3)
 	this->t[1].SetPoint(p2.GetX(), p2.GetY());
 	this->t[2].SetPoint(p3.GetX(), p3.GetY());
 
-	if (BubbleSort(t[0], t[1], t[2]))
+	if (Exception(t[0], t[1], t[2]))
 	{
 		SetDefault();
 	}
@@ -58,7 +58,7 @@ void Triangle::SetTriangle(const Point & p1, const Point & p2, const double & t2
 	this->t[1].SetPoint(p2.GetX(), p2.GetY());
 	this->t[2].SetPoint(t2_x, t2_y);
 
-	if (BubbleSort(t[0], t[1], t[2]))
+	if (Exception(t[0], t[1], t[2]))
 	{
 		SetDefault();
 	}
@@ -70,7 +70,7 @@ void Triangle::SetTriangle(const Point & p1, const double & t1_x, const double &
 	this->t[1].SetPoint(t1_x, t1_y);
 	this->t[2].SetPoint(t2_x, t2_y);
 
-	if (BubbleSort(t[0], t[1], t[2]))
+	if (Exception(t[0], t[1], t[2]))
 	{
 		SetDefault();
 	}
@@ -82,7 +82,7 @@ void Triangle::SetTriangle(const Triangle & t)
 	this->t[1].SetPoint(t.GetP1());
 	this->t[2].SetPoint(t.GetP2());
 
-	if (BubbleSort(t.GetP0(), t.GetP1(), t.GetP2()))
+	if (Exception(t.GetP0(), t.GetP1(), t.GetP2()))
 	{
 		SetDefault();
 	}
@@ -198,7 +198,7 @@ Triangle::~Triangle()
 {
 }
 
-int Triangle::BubbleSort(const Point& p1, const Point& p2, const Point& p3)
+int Triangle::Exception(const Point& p1, const Point& p2, const Point& p3)
 {
 	double d1 = p1.Distance(p2);
 	double d2 = p2.Distance(p3);
