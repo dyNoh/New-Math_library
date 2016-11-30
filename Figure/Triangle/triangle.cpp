@@ -200,25 +200,38 @@ Triangle::~Triangle()
 
 int Triangle::Exception(const Point& p1, const Point& p2, const Point& p3)
 {
-	double d1 = p1.Distance(p2);
-	double d2 = p2.Distance(p3);
-	double d3 = p3.Distance(p1);
-	double d[3] = { d1,d2,d3 };
+   double d1 = p1.Distance(p2);
+   double d2 = p2.Distance(p3);
+   double d3 = p3.Distance(p1);
+   double d[3] = { d1,d2,d3 };
+    d[0] = d[0] * 100;
+    d[1] = d[1] * 100;
+    d[2] = d[2] * 100;
+   int val1 = (int)d[0];
+   int val2 = (int)d[1];
+   int val3 = (int)d[2];
+   d1 = (double)val1 / 100;
+   d2 = (double)val2 / 100;
+   d3 = (double)val3 / 100;
 
-	double temp;
-	for (int i = 0; i < 2; i++) {
-		for (int j = i; j < 2 - i; j++) {
-			if (d[j] > d[j + 1]) {
-				temp = d[j];
-				d[j] = d[j + 1];
-				d[j + 1] = temp;
-			}
-		}
-	}
-	if (d[2] >= d[0] + d[1]) {
-		return 1;
-	}
-	return 0;
+   double dr[3] = { d1,d2,d3 };
+
+
+
+   double temp;
+   for (int i = 0; i < 2; i++) {
+      for (int j = i; j < 2 - i; j++) {
+         if (dr[j] > dr[j + 1]) {
+            temp = dr[j];
+            dr[j] = dr[j + 1];
+            dr[j + 1] = temp;
+         }
+      }
+   }
+   if (dr[2] >= dr[0] + dr[1]) {
+      return 1;
+   }
+   return 0;
 
 }
 
