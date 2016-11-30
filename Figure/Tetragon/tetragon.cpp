@@ -172,7 +172,7 @@ void Tetragon::ShowData(void) const
 	cout << "t[3].y : " << this->GetP3().GetY() << endl;
 }
 
-int Tetragon::BubbleSort(const Point & p1, const Point & p2, const Point & p3, const Point & p4)
+int Tetragon::Exception(const Point & p1, const Point & p2, const Point & p3, const Point & p4)
 {
 }
 
