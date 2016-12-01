@@ -153,16 +153,17 @@ Point Tetragon::GetP3(void) const
 
 double Tetragon::GetArea(void) const
 {
-	double value = ((0.5)*(((this->t[0].GetX())*(this->t[1].GetY()) + (this->t[1].GetX())*(this->t[2].GetY()) +
+	double value1 = ((0.5)*(((this->t[0].GetX())*(this->t[1].GetY()) + (this->t[1].GetX())*(this->t[2].GetY()) +
 		(this->t[2].GetX())*(this->t[0].GetY())) - ((this->t[0].GetX())*(this->t[2].GetY()) +
-		(this->t[2].GetX())*(this->t[1].GetY()) + (this->t[1].GetX())*(this->t[0].GetY())))) +
-			((0.5)*(((this->t[0].GetX())*(this->t[3].GetY()) + (this->t[3].GetX())*(this->t[2].GetY()) +
+		(this->t[2].GetX())*(this->t[1].GetY()) + (this->t[1].GetX())*(this->t[0].GetY()))));
+	double value2 = ((0.5)*(((this->t[0].GetX())*(this->t[3].GetY()) + (this->t[3].GetX())*(this->t[2].GetY()) +
 		(this->t[2].GetX())*(this->t[0].GetY())) - ((this->t[0].GetX())*(this->t[2].GetY()) +
-				(this->t[2].GetX())*(this->t[3].GetY()) + (this->t[3].GetX())*(this->t[0].GetY())))
-				);
-
-
-	return value;
+				(this->t[2].GetX())*(this->t[3].GetY()) + (this->t[3].GetX())*(this->t[0].GetY()))));
+	if (value1 < 0)
+		value1 = -value1;
+	if (value2 < 0)
+		value2 = -value2;
+	return value1 + value2;
 }
 
 double Tetragon::GetRound(void) const
@@ -195,11 +196,6 @@ int Tetragon::Exception(const Point & p1, const Point & p2, const Point & p3, co
 	{
 		return 0;
 	}
-
-	
-
-
-
 }
 
 void Tetragon::SetDefault(void)
