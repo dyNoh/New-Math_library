@@ -40,6 +40,11 @@ void Tetragon::SetTetragon(const double& t0_x, const double& t0_y, const double&
 	this->t[1].SetPoint(t1_x, t1_y);
 	this->t[2].SetPoint(t2_x, t2_y);
 	this->t[3].SetPoint(t3_x, t3_y);
+
+	if (Exception(t[0], t[1], t[2], t[3]))
+	{
+		SetDefault();
+	}
 }
 
 void Tetragon::SetTetragon(const Point & p1, const Point & p2, const Point & p3, const Point & p4)
@@ -48,6 +53,11 @@ void Tetragon::SetTetragon(const Point & p1, const Point & p2, const Point & p3,
 	this->t[1].SetPoint(p2.GetX(), p2.GetY());
 	this->t[2].SetPoint(p3.GetX(), p3.GetY());
 	this->t[3].SetPoint(p4.GetX(), p4.GetY());
+
+	if (Exception(t[0], t[1], t[2], t[3]))
+	{
+		SetDefault();
+	}
 }
 
 void Tetragon::SetTetragon(const Point & p1, const Point & p2, const Point & p3, const double & t3_x, const double & t3_y)
@@ -56,6 +66,11 @@ void Tetragon::SetTetragon(const Point & p1, const Point & p2, const Point & p3,
 	this->t[1].SetPoint(p2.GetX(), p2.GetY());
 	this->t[2].SetPoint(p3.GetX(), p3.GetY());
 	this->t[3].SetPoint(t3_x, t3_y);
+
+	if (Exception(t[0], t[1], t[2], t[3]))
+	{
+		SetDefault();
+	}
 }
 
 void Tetragon::SetTetragon(const Point & p1, const Point & p2, const double & t2_x, const double & t2_y, const double & t3_x, const double & t3_y)
@@ -64,6 +79,11 @@ void Tetragon::SetTetragon(const Point & p1, const Point & p2, const double & t2
 	this->t[1].SetPoint(p2.GetX(), p2.GetY());
 	this->t[2].SetPoint(t2_x, t2_y);
 	this->t[3].SetPoint(t3_x, t3_y);
+
+	if (Exception(t[0], t[1], t[2], t[3]))
+	{
+		SetDefault();
+	}
 }
 
 void Tetragon::SetTetragon(const Point & p1, const double & t1_x, const double & t1_y, const double & t2_x, const double & t2_y, const double & t3_x, const double & t3_y)
@@ -72,6 +92,11 @@ void Tetragon::SetTetragon(const Point & p1, const double & t1_x, const double &
 	this->t[1].SetPoint(t1_x, t1_y);
 	this->t[2].SetPoint(t2_x, t2_y);
 	this->t[3].SetPoint(t3_x, t3_y);
+
+	if (Exception(t[0], t[1], t[2], t[3]))
+	{
+		SetDefault();
+	}
 }
 
 void Tetragon::SetTetragon(const Tetragon & t)
@@ -80,6 +105,11 @@ void Tetragon::SetTetragon(const Tetragon & t)
 	this->t[1].SetPoint(t.GetP1());
 	this->t[2].SetPoint(t.GetP2());
 	this->t[3].SetPoint(t.GetP3());
+
+	if (Exception(t.GetP0(), t.GetP1(), t.GetP2(), t.GetP3))
+	{
+		SetDefault();
+	}
 }
 
 void Tetragon::SetP0(const double & x, const double & y)
@@ -153,16 +183,21 @@ Point Tetragon::GetP3(void) const
 
 double Tetragon::GetArea(void) const
 {
-	double value = ((0.5)*(((this->t[0].GetX())*(this->t[1].GetY()) + (this->t[1].GetX())*(this->t[2].GetY()) +
+	double value1 = ((0.5)*(((this->t[0].GetX())*(this->t[1].GetY()) + (this->t[1].GetX())*(this->t[2].GetY()) +
 		(this->t[2].GetX())*(this->t[0].GetY())) - ((this->t[0].GetX())*(this->t[2].GetY()) +
-		(this->t[2].GetX())*(this->t[1].GetY()) + (this->t[1].GetX())*(this->t[0].GetY())))) +
-			((0.5)*(((this->t[0].GetX())*(this->t[3].GetY()) + (this->t[3].GetX())*(this->t[2].GetY()) +
+		(this->t[2].GetX())*(this->t[1].GetY()) + (this->t[1].GetX())*(this->t[0].GetY()))));
+	double value2 = ((0.5)*(((this->t[0].GetX())*(this->t[3].GetY()) + (this->t[3].GetX())*(this->t[2].GetY()) +
 		(this->t[2].GetX())*(this->t[0].GetY())) - ((this->t[0].GetX())*(this->t[2].GetY()) +
-				(this->t[2].GetX())*(this->t[3].GetY()) + (this->t[3].GetX())*(this->t[0].GetY())))
-				);
-
-
-	return value;
+		(this->t[2].GetX())*(this->t[3].GetY()) + (this->t[3].GetX())*(this->t[0].GetY()))));
+	if (value1 < 0)
+	{
+		value1 = -value1;
+	}
+	if (value2 < 0)
+	{
+		value2 = -value2;
+	}
+	return value1 + value2;
 }
 
 double Tetragon::GetRound(void) const
@@ -193,13 +228,63 @@ int Tetragon::Exception(const Point & p1, const Point & p2, const Point & p3, co
 		(GetP2().GetX() == GetP3().GetX() && GetP2().GetY() == GetP3().GetY())
 		)
 	{
+		return 1;
+	}
+	else if (BoubleSort(p1,p2,p3))
+	{
+		return 1;
+	}
+	else if (BoubleSort(p1, p2, p4))
+	{
+		return 1;
+	}
+	else if(BoubleSort(p2, p3, p4))
+	{
+		return 1;
+	}
+	else if(BoubleSort(p1, p3, p4))
+	{
+		return 1;
+	}
+	else
+	{
 		return 0;
 	}
+}
+int BoubleSort(const Point & p1, const Point & p2, const Point & p3)
+{
+	double d1 = p1.Distance(p2);
+	double d2 = p2.Distance(p3);
+	double d3 = p3.Distance(p1);
+	double d[3] = { d1,d2,d3 };
+	d[0] = d[0] * 100;
+	d[1] = d[1] * 100;
+	d[2] = d[2] * 100;
+	int val1 = (int)d[0];
+	int val2 = (int)d[1];
+	int val3 = (int)d[2];
+	d1 = (double)val1 / 100;
+	d2 = (double)val2 / 100;
+	d3 = (double)val3 / 100;
 
-	
+	double dr[3] = { d1,d2,d3 };
 
+	double temp;
+	for (int i = 0; i < 2; i++) {
+		for (int j = i; j < 2 - i; j++) {
+			if (dr[j] > dr[j + 1]) {
+				temp = dr[j];
+				dr[j] = dr[j + 1];
+				dr[j + 1] = temp;
+			}
+		}
+	}
 
+	if (dr[2] >= dr[0] + dr[1]) {
+		return 1;
+	}
 
+	return 0;
 }
 
 void Tetragon::SetDefault(void)
@@ -209,8 +294,7 @@ void Tetragon::SetDefault(void)
 	this->t[2].SetPoint(1, 1);
 	this->t[3].SetPoint(0, 1);
 }
-/*
+
 Tetragon::~Tetragon()
 {
 }
-*/
