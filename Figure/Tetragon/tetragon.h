@@ -36,12 +36,13 @@ public :
 	double GetArea(void) const;		// 넓이
 	double GetRound(void) const;	// 둘레
 	void ShowData(void) const;	// 정보 나타내기
+	~Tetragon();	// 소멸자
 
 private :
 	int Exception(const Point& p1, const Point& p2, const Point& p3, const Point& p4); // 사각형 성립 조건 확인
 	void SetDefault(void);
 	int BoubleSort(const Point & p1, const Point & p2, const Point & p3);
-	~Tetragon();	// 소멸자
+
 
 };
 

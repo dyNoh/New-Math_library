@@ -106,7 +106,7 @@ void Tetragon::SetTetragon(const Tetragon & t)
 	this->t[2].SetPoint(t.GetP2());
 	this->t[3].SetPoint(t.GetP3());
 
-	if (Exception(t.GetP0(), t.GetP1(), t.GetP2(), t.GetP3))
+	if (Exception(t.GetP0(), t.GetP1(), t.GetP2(), t.GetP3()))
 	{
 		SetDefault();
 	}
@@ -251,7 +251,16 @@ int Tetragon::Exception(const Point & p1, const Point & p2, const Point & p3, co
 		return 0;
 	}
 }
-int BoubleSort(const Point & p1, const Point & p2, const Point & p3)
+
+void Tetragon::SetDefault(void)
+{
+	this->t[0].SetPoint(0, 0);
+	this->t[1].SetPoint(1, 0);
+	this->t[2].SetPoint(1, 1);
+	this->t[3].SetPoint(0, 1);
+}
+
+int Tetragon::BoubleSort(const Point & p1, const Point & p2, const Point & p3)
 {
 	double d1 = p1.Distance(p2);
 	double d2 = p2.Distance(p3);
@@ -285,14 +294,6 @@ int BoubleSort(const Point & p1, const Point & p2, const Point & p3)
 	}
 
 	return 0;
-}
-
-void Tetragon::SetDefault(void)
-{
-	this->t[0].SetPoint(0, 0);
-	this->t[1].SetPoint(1, 0);
-	this->t[2].SetPoint(1, 1);
-	this->t[3].SetPoint(0, 1);
 }
 
 Tetragon::~Tetragon()
