@@ -8,6 +8,25 @@ Matrix::Matrix(const int & row, const int & col)
 	SetMatrixSize(row, col);
 }
 
+Matrix::Matrix(const int & row, const int & col, double **& m)
+{
+	SetMatrixSize(row, col);
+	double **matrix = m;
+	this->m = m;
+}
+
+Matrix::Matrix(Matrix& m)
+{
+	SetMatrixSize(m.row, m.col);
+	for (int i = 0; i < row; i++)
+	{
+		for (int j = 0; j < col; j++)
+		{
+			this->m[i][j] = m.m[i][j];
+		}
+	}
+}
+
 void Matrix::SetMatrixSize(const int & row, const int & col)
 {
 	if (this->row != 0 && this->col != 0)
@@ -51,11 +70,16 @@ void Matrix::ShowData(int row, int col) const
 	cout << this->m[row][col] << endl;
 }
 
-Matrix& Matrix::Add(const Matrix & m)
+double **& Matrix::GetMatrix(void)
 {
-	/*if (this->row != m.row && this->col != m.col)
+	return this->m;
+}
+
+Matrix Matrix::Add(const Matrix & m)
+{
+	if (this->row != m.row && this->col != m.col)
 	{
-		cout << "더할 수 없음" << endl;
+		cout << "Add not Working" << endl;
 		return Matrix();
 	}
 
@@ -68,10 +92,58 @@ Matrix& Matrix::Add(const Matrix & m)
 			temp.SetMatrixData(this->m[i][j] + m.m[i][j], i, j);
 		}
 	}
-	return temp;*/
+	return Matrix(temp);
 }
 
 Matrix Matrix::Sub(const Matrix & m)
+{
+	if (this->row != m.row && this->col != m.col)
+	{
+		cout << "Sub not Working" << endl;
+		return Matrix();
+	}
+
+	Matrix temp(row, col);
+
+	for (int i = 0; i < row; i++)
+	{
+		for (int j = 0; j < col; j++)
+		{
+			temp.SetMatrixData(this->m[i][j] - m.m[i][j], i, j);
+		}
+	}
+	return Matrix(temp);
+}
+
+Matrix Matrix::Mul(const Matrix & m)
+{
+	if (this->col != m.row)
+	{
+		cout << "Mul not Working" << endl;
+		return Matrix();
+	}
+
+	Matrix temp(row, m.col);
+
+	double sum = 0;
+
+	for (int i = 0; i < this->row; i++)
+	{
+		for (int j = 0; j < m.col; j++)
+		{
+			for (int k = 0; k < this->col; k++)
+			{
+				sum += this->m[i][k] * m.m[k][j];
+			}
+			temp.SetMatrixData(sum, i, j);
+			sum = 0;
+		}
+	}
+
+	return Matrix(temp);
+}
+
+Matrix Matrix::Inverse(const Matrix & m)
 {
 	return Matrix();
 }

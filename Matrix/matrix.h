@@ -14,11 +14,14 @@ private:
 
 public:
 	Matrix(const int& row = 0, const int& col = 0);
+	Matrix(const int& row, const int& col, double**& m);
+	Matrix(Matrix& m);
 	void SetMatrixSize(const int& row, const int& col);
 	void SetMatrixData(double data, int row, int col);
 	void ShowAllData(void) const;
 	void ShowData(int row, int col) const;
-	Matrix& Add(const Matrix& m);
+	double**& GetMatrix(void);
+	Matrix Add(const Matrix& m);
 	Matrix Sub(const Matrix& m);
 	Matrix Mul(const Matrix& m);
 	Matrix Inverse(const Matrix& m);
