@@ -24,7 +24,7 @@ public:
 	Matrix Add(const Matrix& m);
 	Matrix Sub(const Matrix& m);
 	Matrix Mul(const Matrix& m);
-	Matrix Inverse(const Matrix& m);
+	Matrix Inverse(void);
 	~Matrix();
 };
 

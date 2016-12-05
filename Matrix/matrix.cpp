@@ -143,9 +143,60 @@ Matrix Matrix::Mul(const Matrix & m)
 	return Matrix(temp);
 }
 
-Matrix Matrix::Inverse(const Matrix & m)
+Matrix Matrix::Inverse(void)
 {
-	return Matrix();
+	if (this->row == 2 && this->col == 2)
+	{
+		double A = (this->m[0][0] * this->m[1][1]) - (this->m[0][1] * this->m[1][0]);
+		if (A == 0)
+		{
+			cout << "Inverse not Working" << endl;
+			return Matrix();
+		}
+		double swap = this->m[0][0];
+		this->m[0][0] = this->m[1][1];
+		this->m[1][1] = swap;
+		this->m[0][1] = -(this->m[0][1]);
+		this->m[1][0] = -(this->m[1][0]);
+		Matrix temp(this->row, this->col);
+		for (int i = 0; i < 2; i++)
+		{
+			for (int j = 0; j < 2; j++)
+			{
+				temp.SetMatrixData(this->m[i][j] / A, i, j);
+			}
+		}
+		return Matrix(temp);
+	}
+	else if (this->row == 3 && this->col == 3)
+	{
+		double A = (this->m[0][0] * this->m[1][1] * this->m[2][2]) + (this->m[1][0] * this->m[2][1] * this->m[0][2]) + (this->m[2][0] * this->m[0][1] * this->m[1][2])
+			- (this->m[0][0] * this->m[2][1] * this->m[1][2]) - (this->m[2][0] * this->m[1][1] * this->m[0][2]) - (this->m[1][0] * this->m[0][1] * this->m[2][2]);
+		if (A == 0)
+		{
+			cout << "Inverse not Working" << endl;
+			return Matrix();
+		}
+		double dev[3][3] = {
+			{ (this->m[1][1] * this->m[2][2]) - (this->m[1][2] * this->m[2][1]), (this->m[0][2] * this->m[2][1]) - (this->m[0][1] * this->m[2][2]), (this->m[0][1] * this->m[1][2]) - (this->m[0][2] * this->m[1][1]) },
+			{ (this->m[1][2] * this->m[2][0]) - (this->m[1][0] * this->m[2][2]), (this->m[0][0] * this->m[2][2]) - (this->m[0][2] * this->m[2][0]), (this->m[0][2] * this->m[1][0]) - (this->m[0][0] * this->m[1][2]) },
+			{ (this->m[1][0] * this->m[2][1]) - (this->m[1][1] * this->m[2][0]), (this->m[0][1] * this->m[2][0]) - (this->m[0][0] * this->m[2][1]), (this->m[0][0] * this->m[1][1]) - (this->m[0][1] * this->m[1][0]) }
+		};
+		Matrix temp(this->row, this->col);
+		for (int i = 0; i < 3; i++)
+		{
+			for (int j = 0; j < 3; j++)
+			{
+				temp.SetMatrixData(dev[i][j] / A, i, j);
+			}
+		}
+		return Matrix(temp);
+	}
+	else
+	{
+		cout << "Inverse not Working" << endl;
+		return Matrix();
+	}
 }
 
 Matrix::~Matrix()
