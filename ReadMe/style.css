@@ -1,0 +1,9 @@
+﻿.font {
+	font-size : 10pt;
+	font-family : 고딕체;
+	font-weight : bold;
+}
+.dash{
+	list-style : square;
+	font-size : 11pt;
+}
