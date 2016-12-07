@@ -1,0 +1,7 @@
+#include "BasicArith\basicArith.h"
+#include "Figure\Circle\circle.h"
+#include "Figure\Line\line.h"
+#include "Figure\Point\point.h"
+#include "Figure\Tetragon\tetragon.h"
+#include "Figure\Triangle\triangle.h"
+#include "Matrix\matrix.h"
