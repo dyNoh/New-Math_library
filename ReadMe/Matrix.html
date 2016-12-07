@@ -1,4 +1,4 @@
-﻿<html>
+<html>
 <head>
 	<link rel='stylesheet' href='style1.css'>
 	<title>Matrix</title>
@@ -12,25 +12,30 @@
 	</div>
 	<br><br>
 	<p align = "center"><br>
-	Matrix<br><br>
-	
-	<table width="1000" height="70">
+	<img src="image/matrix.jpg" height="70"><br><br>
+
+	<table width="1500">
+	<tr  align="left">
+		<td bgcolor="#50AF49"><b>Constructor</b></td>
+	</tr>
+	<tr  align="left">
+		<td>Matrix(const int& row = 0, const int& col = 0)</td>
+	</tr>
+	<tr  align="left">
+		<td bgcolor="#AAFFA3">Matrix(const int& row, const int& col, double**& m)</td>
+	</tr>
+	<tr  align="left">
+		<td>Matrix(Matrix& m)</td>
+	</tr>
+	</table>
+	<table><tr><td></td><br><br></tr></table>
+
+	<table width="1500">
 	<tr  align="left">
 		<td bgcolor="#50AF49"><b>Modifier and Type</b></td>
 		<td bgcolor="#50AF49"><b>Method and Description</b></td>
 	</tr>
-	<tr  align="left">
-		<td></td>
-		<td>Matrix(const int& row = 0, const int& col = 0)</td>
-	</tr>
-	<tr  align="left">
-		<td bgcolor="#AAFFA3"></td>
-		<td bgcolor="#AAFFA3">Matrix(const int& row, const int& col, double**& m)</td>
-	</tr>
-	<tr  align="left">
-		<td></td>
-		<td>Matrix(Matrix& m)</td>
-	</tr>
+
 	<tr  align="left">
 		<td bgcolor="#AAFFA3">void</td>
 		<td bgcolor="#AAFFA3">SetMatrixSize(const int& row, const int& col)</td>
@@ -65,10 +70,109 @@
 	</tr>
 	<tr  align="left">
 		<td bgcolor="#AAFFA3">Matrix</td>
-		<td bgcolor="#AAFFA3">Inverse(const Matrix& m)</td>
+		<td bgcolor="#AAFFA3">Inverse(void)</td>
 	</tr>
 	</table>
-	
+
+	<table><tr><td></td><br><br></tr></table>
+
+	<table width="1500">
+	<tr  align="left">
+		<td bgcolor="#50AF49"><b>Example</b></td>
+	</tr>
+
+	<tr  align="left">
+		<td bgcolor="#AAFFA3">SetMatrixSize(const int& row, const int& col)<td>
+	</tr>
+	<tr  align="left">
+		<td>Matrix M(row, col);<br>
+M.SetMatrixSize(row’, col’);</td>
+	</tr>
+<tr  align="left">
+		<td bgcolor="#476600"> </td>
+	</tr>
+
+	<tr  align="left">
+		<td bgcolor="#AAFFA3">SetMatrixData(double data, int row, int col)<td>
+	</tr>
+	<tr  align="left">
+		<td>Matrix M(date, row, col);<br>
+M.SetMatrixSize(date’, row’, col’);</td>
+	</tr>
+<tr  align="left">
+		<td bgcolor="#476600"> </td>
+	</tr>
+
+	<tr  align="left">
+		<td bgcolor="#AAFFA3">ShowAllData(void) const<td>
+	</tr>
+	<tr  align="left">
+		<td>M.ShowAIID();</td>
+	</tr>
+<tr  align="left">
+		<td bgcolor="#476600"> </td>
+	</tr>
+
+	<tr  align="left">
+		<td bgcolor="#AAFFA3">ShowData(int row, int col) const<td>
+	</tr>
+	<tr  align="left">
+		<td>M.ShowData(row, col);</td>
+	</tr>
+<tr  align="left">
+		<td bgcolor="#476600"> </td>
+	</tr>
+
+	<tr  align="left">
+		<td bgcolor="#AAFFA3">GetMatrix(void)<td>
+	</tr>
+	<tr  align="left">
+		<td>M.GetMatrix();</td>
+	</tr>
+<tr  align="left">
+		<td bgcolor="#476600"> </td>
+	</tr>
+
+	<tr  align="left">
+		<td bgcolor="#AAFFA3">Add(const Matrix& m)<td>
+	</tr>
+	<tr  align="left">
+		<td>M.Add(m);</td>
+	</tr>
+<tr  align="left">
+		<td bgcolor="#476600"> </td>
+	</tr>
+
+	<tr  align="left">
+		<td bgcolor="#AAFFA3">Sub(const Matrix& m)<td>
+	</tr>
+	<tr  align="left">
+		<td>M.Sub(m);</td>
+	</tr>
+<tr  align="left">
+		<td bgcolor="#476600"> </td>
+	</tr>
+
+	<tr  align="left">
+		<td bgcolor="#AAFFA3">Mul(const Matrix& m)<td>
+	</tr>
+	<tr  align="left">
+		<td>M.Mul(m);</td>
+	</tr>
+<tr  align="left">
+		<td bgcolor="#476600"> </td>
+	</tr>
+
+	<tr  align="left">
+		<td bgcolor="#AAFFA3">Inverse(void)<td>
+	</tr>
+	<tr  align="left">
+		<td>M.Inverse();</td>
+	</tr>
+<tr  align="left">
+		<td bgcolor="#476600"> </td>
+	</tr>
+	</table>
 	</p>
 </body>
 </html>
