@@ -1,102 +1,241 @@
-﻿<html>
+<html>
 <head>
-	<link rel='stylesheet' href='style1.css'>
-	<title>Line</title>
+   <link rel='stylesheet' href='style1.css'>
+   <title>Line</title>
 </head>
 <body>
-	<div class="deco topdeco">
-	<span></span>
-	<span></span>
-	<span></span>
-	<span></span>
-	</div>
-	<br><br>
-	<p align = "center"><br>
-	Line<br><br>
-	
-	<table width="1000" height="70">
-	<tr  align="left">
-		<td bgcolor="#50AF49"><b>Modifier and Type</b></td>
-		<td bgcolor="#50AF49"><b>Method and Description</b></td>
-	</tr>
-	<tr  align="left">
-		<td></td>
-		<td>Line(const double& l0_x = 0, const double& l0_y = 0, const double& l1_x = 0, const double& l1_y = 0)</td>
-	</tr>
-	<tr  align="left">
-		<td bgcolor="#AAFFA3"></td>
-		<td bgcolor="#AAFFA3">Line(const Point& p1, const Point& p2)</td>
-	</tr>
-	<tr  align="left">
-		<td></td>
-		<td>Line(const Point& p1, const double& l1_x, const double& l1_y)</td>
-	</tr>
-	<tr  align="left">
-		<td bgcolor="#AAFFA3"></td>
-		<td bgcolor="#AAFFA3">Line(const Line& l)</td>
-	</tr>
-	<tr  align="left">
-		<td>void</td>
-		<td>SetLine(const double& l0_x, const double& l0_y, const double& l1_x, const double& l1_y)</td>
-	</tr>
-	<tr  align="left">
-		<td bgcolor="#AAFFA3">void</td>
-		<td bgcolor="#AAFFA3">SetLine(const Point& p1, const Point& p2)</td>
-	</tr>
-	<tr  align="left">
-		<td>void</td>
-		<td>SetLine(const Point& p1, const double& l1_x, const double& l1_y)</td>
-	</tr>
-	<tr  align="left">
-		<td bgcolor="#AAFFA3">void</td>
-		<td bgcolor="#AAFFA3">SetLine(const Line& l)</td>
-	</tr>
-	<tr  align="left">
-		<td>void</td>
-		<td>SetP0(const double& x, const double& y)</td>
-	</tr>
-	<tr  align="left">
-		<td bgcolor="#AAFFA3">void</td>
-		<td bgcolor="#AAFFA3">SetP0(const Point& p)</td>
-	</tr>
-	<tr  align="left">
-		<td>void</td>
-		<td>SetP1(const double& x, const double& y)</td>
-	</tr>
-	<tr  align="left">
-		<td bgcolor="#AAFFA3">void</td>
-		<td bgcolor="#AAFFA3">SetP1(const Point&p)</td>
-	</tr>
-	<tr  align="left">
-		<td>Line</td>
-		<td>GetLine(void) const</td>
-	</tr>
-	<tr  align="left">
-		<td bgcolor="#AAFFA3">Point</td>
-		<td bgcolor="#AAFFA3">GetP0(void) const</td>
-	</tr>
-	<tr  align="left">
-		<td>Point</td>
-		<td>GetP1(void) const</td>
-	</tr>
-	<tr  align="left">
-		<td bgcolor="#AAFFA3">double</td>
-		<td bgcolor="#AAFFA3">Distance(void) const</td>
-	</tr>
-	<tr  align="left">
-		<td>int</td>
-		<td>Exception(const Point & p1, const Point & p2)</td>
-	</tr>
-	<tr  align="left">
-		<td bgcolor="#AAFFA3">void</td>
-		<td bgcolor="#AAFFA3">SetDefault(void)</td>
-	</tr>
-	
-	
-	
+   <div class="deco topdeco">
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   </div>
+   <br><br>
+   <p align = "center"><br>
+   <img src="image/line.jpg" height="70"><br><br>
 
-	</table>
-	
-	</p>
+   <table width="1500">
+   <tr  align="left">
+      <td bgcolor="#50AF49"><b>Constructor</b></td>
+   </tr>
+   <tr  align="left">
+      <td>Line(const double& l0_x = 0, const double& l0_y = 0, const double& l1_x = 0, const double& l1_y = 0)</td>
+   </tr>
+   <tr  align="left">
+      <td bgcolor="#AAFFA3">Line(const Point& p1, const Point& p2)</td>
+   </tr>
+   <tr  align="left">
+      <td>Line(const Point& p1, const double& l1_x, const double& l1_y)</td>
+   </tr>
+   <tr  align="left">
+      <td bgcolor="#AAFFA3">Line(const Line& l)</td>
+   </tr>
+   </table>
+   <table><tr><td></td><br><br></tr></table>
+
+
+   <table width="1500">
+   <tr  align="left">
+      <td bgcolor="#50AF49"><b>Modifier and Type</b></td>
+      <td bgcolor="#50AF49"><b>Method</b></td>
+   </tr>
+
+   <tr  align="left">
+      <td>void</td>
+      <td>SetLine(const double& l0_x, const double& l0_y, const double& l1_x, const double& l1_y)</td>
+   </tr>
+   <tr  align="left">
+      <td bgcolor="#AAFFA3">void</td>
+      <td bgcolor="#AAFFA3">SetLine(const Point& p1, const Point& p2)</td>
+   </tr>
+   <tr  align="left">
+      <td>void</td>
+      <td>SetLine(const Point& p1, const double& l1_x, const double& l1_y)</td>
+   </tr>
+   <tr  align="left">
+      <td bgcolor="#AAFFA3">void</td>
+      <td bgcolor="#AAFFA3">SetLine(const Line& l)</td>
+   </tr>
+   <tr  align="left">
+      <td>void</td>
+      <td>SetP0(const double& x, const double& y)</td>
+   </tr>
+   <tr  align="left">
+      <td bgcolor="#AAFFA3">void</td>
+      <td bgcolor="#AAFFA3">SetP0(const Point& p)</td>
+   </tr>
+   <tr  align="left">
+      <td>void</td>
+      <td>SetP1(const double& x, const double& y)</td>
+   </tr>
+   <tr  align="left">
+      <td bgcolor="#AAFFA3">void</td>
+      <td bgcolor="#AAFFA3">SetP1(const Point&p)</td>
+   </tr>
+   <tr  align="left">
+      <td>Line</td>
+      <td>GetLine(void) const</td>
+   </tr>
+   <tr  align="left">
+      <td bgcolor="#AAFFA3">Point</td>
+      <td bgcolor="#AAFFA3">GetP0(void) const</td>
+   </tr>
+   <tr  align="left">
+      <td>Point</td>
+      <td>GetP1(void) const</td>
+   </tr>
+   <tr  align="left">
+      <td bgcolor="#AAFFA3">double</td>
+      <td bgcolor="#AAFFA3">Distance(void) const</td>
+   </tr>
+   <tr  align="left">
+      <td>int</td>
+      <td>Exception(const Point & p1, const Point & p2)</td>
+   </tr>
+   <tr  align="left">
+      <td bgcolor="#AAFFA3">void</td>
+      <td bgcolor="#AAFFA3">SetDefault(void)</td>
+   </tr>
+   <tr  align="left">
+      <td>void</td>
+      <td>ShowData(void) const</td>
+   </tr>
+
+
+   </table>
+
+
+
+   <table><tr><td></td><br><br></tr></table>
+
+   <table width="1500">
+   <tr  align="left">
+      <td bgcolor="#50AF49"><b>Example</b></td>
+   </tr>
+   <tr  align="left">
+      <td bgcolor="#AAFFA3">SetLine(const double& l0_x, const double& l0_y, const double& l1_x, const double& l1_y)<td>
+   </tr>
+   <tr  align="left">
+      <td>Line L(l0_x, l0_y, l1_x, l1_y);<br>
+L.SetLine(l0_x’, l0_y’, l1_x’, l1_y’);<br>
+   </tr>
+   <tr  align="left">
+      <td bgcolor="#476600"> </td>
+   </tr>
+   <tr  align="left">
+      <td bgcolor="#AAFFA3">SetLine(const Point& p1, const Point& p2)<td>
+   </tr>
+   <tr  align="left">
+      <td>Line L(p1. p2. p3)<br>
+L.SetLine(p1’, p2’, p3’)<br>
+   </tr>
+   <tr  align="left">
+      <td bgcolor="#476600"> </td>
+   </tr>
+   <tr  align="left">
+      <td bgcolor="#AAFFA3">SetLine(const Point& p1, const double& l1_x, const double& l1_y)<td>
+   </tr>
+   <tr  align="left">
+      <td>Line L(p1, l1_x, l1_y);<br>
+   </tr>
+   <tr  align="left">
+      <td bgcolor="#476600"> </td>
+   </tr>
+   <tr  align="left">
+      <td bgcolor="#AAFFA3">SetLine(const Line& l)<td>
+   </tr>
+   <tr  align="left">
+      <td>Line L(l’); <br>
+   </tr>
+   <tr  align="left">
+      <td bgcolor="#476600"> </td>
+   </tr>
+   <tr  align="left">
+      <td bgcolor="#AAFFA3">SetP0(const double& x, const double& y)<td>
+   </tr>
+   <tr  align="left">
+      <td>L.SetP0(x’,y’);<br>
+   </tr>
+   <tr  align="left">
+      <td bgcolor="#476600"> </td>
+   </tr>
+   <tr  align="left">
+      <td bgcolor="#AAFFA3">SetP0(const Point& p)<td>
+   </tr>
+   <tr  align="left">
+      <td>L.SetP0(p1); <br>
+   </tr>
+   <tr  align="left">
+      <td bgcolor="#476600"> </td>
+   </tr>
+   <tr  align="left">
+      <td bgcolor="#AAFFA3">SetP1(const double& x, const double& y)<td>
+   </tr>
+   <tr  align="left">
+      <td>L.SetP1(x’,y’); <br>
+   </tr>
+   <tr  align="left">
+      <td bgcolor="#476600"> </td>
+   </tr>
+   <tr  align="left">
+      <td bgcolor="#AAFFA3">SetP1(const Point&p)<td>
+   </tr>
+   <tr  align="left">
+      <td>L.SetP1(p2’); <br>
+   </tr>
+   <tr  align="left">
+      <td bgcolor="#476600"> </td>
+   </tr>
+   <tr  align="left">
+      <td bgcolor="#AAFFA3">GetLine(void) const<td>
+   </tr>
+   <tr  align="left">
+      <td>L.GetLine(); <br>
+   </tr>
+   <tr  align="left">
+      <td bgcolor="#476600"> </td>
+   </tr>
+<tr  align="left">
+      <td bgcolor="#AAFFA3">GetP0(void) const<td>
+   </tr>
+   <tr  align="left">
+      <td>L.GetP0(); <br>
+   </tr>
+   <tr  align="left">
+      <td bgcolor="#476600"> </td>
+   </tr>
+<tr  align="left">
+      <td bgcolor="#AAFFA3">GetP1(void) const<td>
+   </tr>
+   <tr  align="left">
+      <td>L.GetP1(); <br>
+   </tr>
+   <tr  align="left">
+      <td bgcolor="#476600"> </td>
+   </tr>
+<tr  align="left">
+      <td bgcolor="#AAFFA3">Distance(void) const<td>
+   </tr>
+   <tr  align="left">
+      <td>L.Distance(); <br>
+   </tr>
+   <tr  align="left">
+      <td bgcolor="#476600"> </td>
+   </tr>
+   <tr  align="left">
+      <td bgcolor="#AAFFA3">ShowData(void) const<td>
+   </tr>
+   <tr  align="left">
+      <td>L.ShowData(); <br>
+   </tr>
+   <tr  align="left">
+      <td bgcolor="#476600"> </td>
+   </tr>
+
+
+   </table>
+
+
+   </p>
 </body>
 </html>
