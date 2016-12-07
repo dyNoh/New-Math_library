@@ -28,6 +28,7 @@ public:
 	Point GetP0(void) const;
 	Point GetP1(void) const;
 	double Distance(void) const; // 길이
+	void ShowData(void) const
 	~Line();	// 소멸자
 private:
 	int Exception(const Point & p1, const Point & p2);//예외처리

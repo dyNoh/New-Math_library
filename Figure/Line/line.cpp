@@ -105,6 +105,7 @@ double Line::Distance(void) const
 {
 	return 0.0;
 }
+
 void Line::ShowData(void) const
 {
 	cout << "l[0].x : " << this->GetP0().GetX() << endl;
