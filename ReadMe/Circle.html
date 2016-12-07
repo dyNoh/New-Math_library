@@ -1,7 +1,7 @@
-﻿<html>
+<html>
 <head>
 	<link rel='stylesheet' href='style1.css'>
-	<title>Circle</title>
+	<title>Point</title>
 </head>
 <body>
 	<div class="deco topdeco">
@@ -12,78 +12,179 @@
 	</div>
 	<br><br>
 	<p align = "center"><br>
-	Circle<br><br>
-	
-	<table width="1000" height="70">
+	<img src="image/point.jpg" height="70"><br><br>
+
+	<table width="1500">
+	<tr  align="left">
+		<td bgcolor="#50AF49"><b>Constructor</b></td>
+	</tr>
+	<tr  align="left">
+		<td>Point(double x = 0, double y = 0)</td>
+	</tr>
+	<tr  align="left">
+		<td bgcolor="#AAFFA3">Point(const Point& p)</td>
+	</tr>
+	</table>
+
+	<table><tr><td></td><br><br></tr></table>
+
+	<table width="1500">
 	<tr  align="left">
 		<td bgcolor="#50AF49"><b>Modifier and Type</b></td>
 		<td bgcolor="#50AF49"><b>Method and Description</b></td>
 	</tr>
 	<tr  align="left">
-		<td></td>
-		<td>Circle(double x = 0, double y = 0, double r = 0)</td>
-	</tr>
-	<tr  align="left">
-		<td bgcolor="#AAFFA3"></td>
-		<td bgcolor="#AAFFA3">Circle(const Point& p, const double& r = 0)</td>
-	</tr>
-	<tr  align="left">
-		<td></td>
-		<td>Circle(const Circle& c)</td>
+		<td>void</td>
+		<td>SetPoint(const double& x, const double& y)</td>
 	</tr>
 	<tr  align="left">
 		<td bgcolor="#AAFFA3">void</td>
-		<td bgcolor="#AAFFA3">SetCircle(const double& x, const double& y, const double& r)</td>
+		<td bgcolor="#AAFFA3">SetPoint(const Point& p)</td>
 	</tr>
 	<tr  align="left">
 		<td>void</td>
-		<td>SetCircle(const Point& p, const double& r)</td>
+		<td>SetX(const double& x)</td>
 	</tr>
 	<tr  align="left">
 		<td bgcolor="#AAFFA3">void</td>
-		<td bgcolor="#AAFFA3">SetCircle(const Circle& c)</td>
-	</tr>
-	<tr  align="left">
-		<td>void</td>
-		<td>SetCenter(const Point& p)</td>
-	</tr>
-	<tr  align="left">
-		<td bgcolor="#AAFFA3">void</td>
-		<td bgcolor="#AAFFA3">SetCenter(const double& x, const double& y)</td>
-	</tr>
-	<tr  align="left">
-		<td>void</td>
-		<td>SetR(const double& r)</td>
-	</tr>
-	<tr  align="left">
-		<td bgcolor="#AAFFA3">Circle</td>
-		<td bgcolor="#AAFFA3">GetCircle(void) const</td>
+		<td bgcolor="#AAFFA3">SetY(const double& y)</td>
 	</tr>
 	<tr  align="left">
 		<td>Point</td>
-		<td>GetPoint(void) </td>
+		<td>GetPoint(void) const</td>
 	</tr>
 	<tr  align="left">
 		<td bgcolor="#AAFFA3">double</td>
-		<td bgcolor="#AAFFA3">GetR(void) const</td>
+		<td bgcolor="#AAFFA3">GetX(void) const</td>
 	</tr>
 	<tr  align="left">
 		<td>double</td>
-		<td>GetArea(void) const</td>
+		<td>GetY(void) const</td>
 	</tr>
 	<tr  align="left">
 		<td bgcolor="#AAFFA3">double</td>
-		<td bgcolor="#AAFFA3">GetRound(void) const</td>
+		<td bgcolor="#AAFFA3">Distance(const double& x, const double& y) const</td>
 	</tr>
 	<tr  align="left">
-		<td>void</td>
-		<td>ShowData(void)</td>
+		<td>double</td>
+		<td>Distance(const Point& p) const</td>
 	</tr>
-	
-	
+	<tr  align="left">
+		<td bgcolor="#AAFFA3">void</td>
+		<td bgcolor="#AAFFA3">ShowData(void) const</td>
+	</tr>
 
 	</table>
-	
+
+
+	<table><tr><td></td><br><br></tr></table>
+
+	<table width="1500">
+	<tr  align="left">
+		<td bgcolor="#50AF49"><b>Example</b></td>
+	</tr>
+	<tr  align="left">
+		<td bgcolor="#AAFFA3">SetPoint(const double& x, const double& y)<td>
+	</tr>
+	<tr  align="left">
+		<td>point p(x,y);<br>
+p.SetPoint(x',y');</td>
+	</tr>
+	<tr  align="left">
+		<td bgcolor="#476600"> </td>
+	</tr>
+	<tr  align="left">
+		<td bgcolor="#AAFFA3">SetPoint(const Point& p)<td>
+	</tr>
+	<tr  align="left">
+		<td>Point p1(x,y), p2(x',y');<br>
+p1.SetPoint(p2);</td>
+	</tr>
+	<tr  align="left">
+		<td bgcolor="#476600"> </td>
+	</tr>
+	<tr  align="left">
+		<td bgcolor="#AAFFA3">SetX(const double& x)<td>
+	</tr>
+	<tr  align="left">
+		<td>Point p(x,y);
+p.SetX(x');</td>
+	</tr>
+	<tr  align="left">
+		<td bgcolor="#476600"> </td>
+	</tr>
+	<tr  align="left">
+		<td bgcolor="#AAFFA3">SetY(const double& y)<td>
+	</tr>
+	<tr  align="left">
+		<td>Point p(x,y);
+p.SetY(y');</td>
+	</tr>
+	<tr  align="left">
+		<td bgcolor="#476600"> </td>
+	</tr>
+	<tr  align="left">
+		<td bgcolor="#AAFFA3">GetPoint(void) const<td>
+	</tr>
+	<tr  align="left">
+		<td>Point p(x,y);
+p.GetPoint();</td>
+	</tr>
+	<tr  align="left">
+		<td bgcolor="#476600"> </td>
+	</tr>
+	<tr  align="left">
+		<td bgcolor="#AAFFA3">GetX(void) const<td>
+	</tr>
+	<tr  align="left">
+		<td>Point p(x,y);
+p.GetX();</td>
+	</tr>
+	<tr  align="left">
+		<td bgcolor="#476600"> </td>
+	</tr>
+	<tr  align="left">
+		<td bgcolor="#AAFFA3">GetY(void) const<td>
+	</tr>
+	<tr  align="left">
+		<td>Point p(x,y);
+p.GetY();</td>
+	</tr>
+	<tr  align="left">
+		<td bgcolor="#476600"> </td>
+	</tr>
+	<tr  align="left">
+		<td bgcolor="#AAFFA3">Distance(const double& x, const double& y) const<td>
+	</tr>
+	<tr  align="left">
+		<td>Point p1(x,y);
+p1.Distance(x’,y’);</td>
+	</tr>
+	<tr  align="left">
+		<td bgcolor="#476600"> </td>
+	</tr>
+	<tr  align="left">
+		<td bgcolor="#AAFFA3">Distance(const Point& p) const<td>
+	</tr>
+	<tr  align="left">
+		<td>Point p1(x,y);
+Point p2(x’, y’);
+p1.Distance(p2);</td>
+	</tr>
+	<tr  align="left">
+		<td bgcolor="#476600"> </td>
+	</tr>
+	<tr  align="left">
+		<td bgcolor="#AAFFA3">ShowData(void) const<td>
+	</tr>
+	<tr  align="left">
+		<td>Point p(x,y);
+p.ShowData();</td>
+	</tr>
+	<tr  align="left">
+		<td bgcolor="#476600"> </td>
+	</tr>
+	</table>
 	</p>
 </body>
 </html>
