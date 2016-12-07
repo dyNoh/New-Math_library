@@ -34,13 +34,7 @@ public:
 	Point GetP2(void) const;
 	double GetArea(void) const;		// 넓이
 	double GetRound(void) const;	// 둘레
-	double GetCenterOfGravity(void) const;	// 무게중심
-	double GetOrthcenter(void) const;	// 수심
-	double GetExcenter(void) const;	// 방심
-	double GetIntercenter(void) const;	// 내심
-	double GetCircumcenter(void) const;	// 외심
 	void ShowData(void) const;	// 정보 나타내기
-	// 삼각형 각도 구하기 등 추가
 	~Triangle();	// 소멸자
 private :
 	int Exception(const Point& p1, const Point& p2, const Point& p3); // 삼각형 성립 조건 확인

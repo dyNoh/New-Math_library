@@ -159,31 +159,6 @@ double Triangle::GetRound(void) const
 	return this->t[0].Distance(this->t[1]) + this->t[1].Distance(this->t[2]) + this->t[2].Distance(this->t[0]);
 }
 
-double Triangle::GetCenterOfGravity(void) const
-{
-	return 0.0;
-}
-
-double Triangle::GetOrthcenter(void) const
-{
-	return 0.0;
-}
-
-double Triangle::GetExcenter(void) const
-{
-	return 0.0;
-}
-
-double Triangle::GetIntercenter(void) const
-{
-	return 0.0;
-}
-
-double Triangle::GetCircumcenter(void) const
-{
-	return 0.0;
-}
-
 void Triangle::ShowData(void) const
 {
 	cout << "t[0].x : " << this->GetP0().GetX() << endl;
