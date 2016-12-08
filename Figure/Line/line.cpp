@@ -1,4 +1,8 @@
+#include <iostream>
 #include "line.h"
+
+using std::cout;
+using std::endl;
 
 Line::Line(const double & l0_x, const double & l0_y, const double & l1_x, const double & l1_y)
 {
