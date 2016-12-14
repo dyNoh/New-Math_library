@@ -107,7 +107,7 @@ Point Line::GetP1(void) const
 
 double Line::Distance(void) const
 {
-	return this->GetP0.Distance(GetP1);
+	return this->l[0].Distance(this->l[1]);
 }
 
 void Line::ShowData(void) const
